@@ -1,0 +1,367 @@
+<list>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>7</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Will&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with Chaos Bolt</command>
+    <label>Chaos Bolt</label>
+    <group>Abilities - Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>8</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Reflexes&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with Eldritch Blast
+</command>
+    <label>Eldritch Blast</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>14</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Charisma&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 3d8 + AbilityMod] and slides the target 3 squares</command>
+    <label>CotDD Damage</label>
+    <group>Abilities - Daily</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>17</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Charisma&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod]
+</command>
+    <label>Eldritch Blast Damage</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>19</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Charisma&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d6 + AbilityMod], and is invisible to the target until the start of {getName()}&apos;s next turn.</command>
+    <label>Eyebite Damage</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>18</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Will&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with Eyebite</command>
+    <label>Eyebite</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>21</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+deals [gt, st, t(&quot;curse damage&quot;): 1d6]</command>
+    <label>Warlock&apos;s Curse Damage</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>20</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me
+[h: abort(input(
+    &quot;Target|&quot; + targetList(&quot;npc&quot;) +&quot;|Target|RADIO|VALUE=STRING&quot;
+))]
+[h: state(Target, &quot;Curse Blue&quot;, 1)]
+curses {Target}</command>
+    <label>Warlock&apos;s Curse</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>23</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Charisma&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod]</command>
+    <label>Chaos Bolt Damage</label>
+    <group>Abilities - Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>22</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Will&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with Curse of the Dark Dream</command>
+    <label>Curse of the Dark Dream</label>
+    <group>Abilities - Daily</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>25</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Charisma&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 2d6 + AbilityMod], and the target makes a -2 penalty to attack rolls until the end of {getName()}&apos;s next turn</command>
+    <label>Witchfire Damage</label>
+    <group>Abilities - Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>24</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Reflexes&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with Witchfire</command>
+    <label>Witchfire</label>
+    <group>Abilities - Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+</list>

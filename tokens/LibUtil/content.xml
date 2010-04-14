@@ -1,0 +1,1787 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>wKgBAfHkim6gAQAAQIgAAQ==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>98a35b9f71208a7cc03e80fbf3a839a3</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>1100</x>
+  <y>400</y>
+  <z>3</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
+  <snapToScale>true</snapToScale>
+  <width>64</width>
+  <height>64</height>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAdBlFSoGAAAAKgABAA==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <name>Lib:Util</name>
+  <ownerType>0</ownerType>
+  <tokenShape>TOP_DOWN</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>Library</propertyType>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Normal</sightType>
+  <hasSight>false</hasSight>
+  <state>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <propertyMap class="net.rptools.CaseInsensitiveHashMap">
+    <store>
+      <entry>
+        <string>==== skills ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== SKILLS ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>currenttarget</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CurrentTarget</key>
+          <value class="string">Elf</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>current hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Current HP</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== hit points ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== HIT POINTS ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Religion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>action points remaining</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Action Points Remaining</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod streetwise</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Streetwise</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>temporary hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Temporary HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 2 bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 2 Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dungeoneering</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dungeoneering</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== mod ability scores ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOD ABILITY SCORES ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>acrobatics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Acrobatics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod maximum hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Maximum HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== initiative ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== INITIATIVE ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod constitution mod</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Constitution Mod</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod bluff</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Bluff</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Perception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Religion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>will</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Will</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod reflexes</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Reflexes</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod initiative</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Initiative</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== basic info ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== BASIC INFO ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== mod defenses ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOD DEFENSES ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod surge value</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Surge Value</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== mod initiative ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOD INITIATIVE ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod acrobatics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Acrobatics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod heal</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Heal</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod intimidate</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Intimidate</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 1 bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 1 Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== mod movement ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOD MOVEMENT ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod endurance</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Endurance</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>initiative</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Initiative</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>diplomacy</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Diplomacy</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== ability scores ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== ABILITY SCORES ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod speed</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Speed</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== equipment ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== EQUIPMENT ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod dungeoneering</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Dungeoneering</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bluff</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Bluff</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>History</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod attack</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Attack</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>full name</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Full Name</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>money on hand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Money on hand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stored money</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Stored money</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>death saving throws failed</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Death Saving Throws Failed</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 3 bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 3 Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== defenses ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== DEFENSES ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>surge value</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Surge Value</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intimidate</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intimidate</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== mod hit points ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOD HIT POINTS ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== mod skills ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOD SKILLS ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>race</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Race</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 3 damage</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 3 Damage</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>endurance</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Endurance</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 1 name</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 1 Name</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod dexterity mod</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Dexterity Mod</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>level</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Level</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>height</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Height</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>heal</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Heal</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 1 damage</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 1 Damage</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod AC</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>age</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Age</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 2 damage</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 2 Damage</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weight carried</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weight Carried</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>==== movement ====</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>==== MOVEMENT ====</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>gender</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Gender</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Intelligence</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod History</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>class</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Class</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>surges per day</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Surges Per Day</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>diety</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Diety</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>healing surges remaining</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Healing Surges Remaining</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>size</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Size</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 3 name</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 3 Name</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>===== temporary modifiers ======</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>===== TEMPORARY MODIFIERS ======</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod thievery</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Thievery</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod will</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Will</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>alignment</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Alignment</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>fortitude</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Fortitude</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod surges per day</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Surges Per Day</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>experience</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Experience</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>===========================</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>===========================</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>speed</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Speed</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Wisdom</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>reflexes</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Reflexes</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod fortitude</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Fortitude</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weapon 2 name</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weapon 2 Name</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>streetwise</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Streetwise</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod diplomacy</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Diplomacy</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>mod damage</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Mod Damage</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>thievery</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Thievery</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>maximum hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Maximum HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+    </store>
+  </propertyMap>
+  <macroPropertiesMap>
+    <entry>
+      <int>1</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>1</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Target = if(argCount() == 3, arg(argCount() - 1), currentToken())]
+[h: Name = arg(0)]
+[h: Default = arg(1)]
+[h, token(Target): value = if(isPropertyEmpty(Name), Default, getProperty(Name))]
+[h: macro.return = if(length(string(value)) == 0, Default, value)]</command>
+        <label>getPropertyWithDefault</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>2</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>2</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h, foreach(macro, getMacros()): defineFunction(macro, macro + &quot;@Lib:Util&quot;)]</command>
+        <label>onCampaignLoad</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>3</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>3</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: setProperty(arg(0), arg(1))]
+[h, IF(arg(1) == arg(2)) : resetProperty(arg(0))]</command>
+        <label>setPropertyWithDefault</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>4</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>4</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: TempHP = getPropertyWithDefault(&quot;Temporary HP&quot;, 0)]
+[h: MaxHP = getProperty(&quot;Maximum HP&quot;)]
+[h: HP = getPropertyWithDefault(&quot;Current HP&quot;, MaxHP)]
+[h: BloodiedHP = MaxHP / 2]
+[h: DyingHP = 0]
+[h: DeadHP = if(isPC(), -MaxHP / 2, 0)]
+
+[h: macro.return = json.set(
+    &quot;&quot;,
+    &quot;TempHP&quot;, TempHP,
+    &quot;MaxHP&quot;, MaxHP,
+    &quot;HP&quot;, HP,
+    &quot;BloodiedHP&quot;, BloodiedHP,
+    &quot;DyingHP&quot;, DyingHP,
+    &quot;DeadHP&quot;, DeadHP
+)]</command>
+        <label>getHealthStats</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>5</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>5</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[stats = arg(0)]
+
+[h: MaxHP = json.get(stats, &quot;MaxHP&quot;)]
+[h: HP = json.get(stats, &quot;HP&quot;)]
+[h: TempHP = json.get(stats, &quot;TempHP&quot;)]
+[h: DeadHP = json.get(stats, &quot;DeadHP&quot;)]
+[h: DyingHP = json.get(stats, &quot;DyingHP&quot;)]
+[h: BloodiedHP = json.get(stats, &quot;BloodiedHP&quot;)]
+
+[h: setProperty(&quot;Current HP&quot;, HP)]
+[h: setPropertyWithDefault(&quot;Temporary HP&quot;, TempHP, 0)]
+
+[h: state.Dead = if(HP &lt;= DeadHP, 1, 0)]
+[h: state.Dying = if(!state.Dead &amp;&amp; HP &lt;= DyingHP, 1, 0)]
+[h: state.Bloodied = if(!state.Dead &amp;&amp; !state.Dying &amp;&amp; HP &lt;= BloodiedHP, 1, 0)]
+
+[h: setBar(&quot;Health&quot;, HP/MaxHP)]</command>
+        <label>setHealthStats</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>6</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>6</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Health = arg(0)]
+
+[h: stats = getHealthStats()]
+[h: HP = json.get(stats, &quot;HP&quot;)]
+[h: MaxHP = json.get(stats, &quot;MaxHP&quot;)]
+
+&lt;!-- Calculate healing --&gt;
+[h: NewHP = min(MaxHP, max(0, HP) + Health)]
+
+[h: stats = json.set(stats, &quot;HP&quot;, NewHP)]
+[h: setHealthStats(stats)]
+
+[h: macro.return = NewHP - HP]</command>
+        <label>heal</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>7</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>7</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Damage = arg(0)]
+
+[h: Stats = getHealthStats()]
+[h: HP = json.get(Stats, &quot;HP&quot;)]
+[h: MaxHP = json.get(Stats, &quot;MaxHP&quot;)]
+[h: TempHP = json.get(Stats, &quot;TempHP&quot;)]
+
+&lt;!-- Calculate damage --&gt;
+[h: HPDamage = max(Damage - TempHP, 0)]
+[h: TempHP = max(TempHP - Damage, 0)]
+[h: HP = HP - HPDamage]
+
+[h: Stats = json.set(Stats, &quot;HP&quot;, HP)]
+[h: Stats = json.set(Stats, &quot;TempHP&quot;, TempHP)]
+[h: setHealthStats(stats)]
+
+[h: macro.return = Damage]</command>
+        <label>damage</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>8</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>8</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: attackResult = arg(0)]
+[h: targetName = arg(1)]
+[h: targetDefense = arg(2)]
+ 
+[h: defenseValue = getProperty(targetDefense,targetName)]
+[h: modDefense = getPropertyWithDefault(&quot;Mod &quot; + targetDefense, 0, targetName)]
+[h: HalfLevel = halfLevel(targetName)]
+
+[r,if(attackResult &gt;= defenseValue + modDefense + HalfLevel): 1; 0]</command>
+        <label>hitCheck</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>9</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>9</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: AbilityName = arg(0)]
+[h: Target = if(argCount() &gt; 1, arg(argCount() - 1), currentToken())]
+[h: AbilityValue = getProperty(AbilityName, Target)]
+[h: macro.return = floor((AbilityValue - 10) / 2)]</command>
+        <label>getAbilityMod</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>14</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>14</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Type = getArg(macro.args, 0, &quot;all&quot;)]
+[h: IsMultipleTargets = getArg(macro.args, 1, 0)]
+
+[h: Targets = targetList(Type)]
+
+[h, if(IsMultipleTargets == 1), CODE: {
+    [h: CheckList = &quot;[]&quot;]
+    [h: Format = &quot;Target%d|0|%s|CHECK&quot;]
+    [h: NumTargets = listCount(Targets)]
+    [h, for(i, 0, NumTargets), CODE: {
+        [h: Target = listGet(Targets, i)]
+        [h: Line = strformat(Format, i, Target)]
+        [h: CheckList = json.append(CheckList, Line)]
+    }]
+    [h: CheckList = json.toList(CheckList, &quot;##&quot;)]
+    [h: abort(input(CheckList))]
+
+    [h: Result = &quot;&quot;]
+    [h, for(i, 0, NumTargets), CODE: {
+        [h: IsSelected = eval(&quot;Target&quot; + i)]
+        [h, if(IsSelected == 1): Result = listAppend(Result, listGet(Targets, i))]
+    }]
+};{
+    [h: CheckList = &quot;Result|&quot; + Targets +&quot;|Target|RADIO|VALUE=STRING&quot;]
+    [h: abort(input(CheckList))]
+}]
+[h: macro.return = Result]</command>
+        <label>askForTarget</label>
+        <group>Dialogs</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>15</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>15</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Token = currentToken()]
+[h, if(argCount() == 1): Token = arg(0)]
+[h: Gender = getProperty(&quot;Gender&quot;, Token)]
+[h, switch(Gender), code: 
+    case &quot;Male&quot;: {[macro.return = &quot;he, his, his&quot;]};
+    case &quot;Female&quot;: {[macro.return = &quot;she, her, hers&quot;]};
+    default: {[macro.return = &quot;it, its, its&quot;]}
+]</command>
+        <label>pronouns</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>17</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>17</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Type = getArg(macro.args, 0, &quot;Any&quot;)]
+[h: Weapons = &quot;[]&quot;]
+[h: i = 1]
+[h, while(!isPropertyEmpty(&quot;Weapon &quot; + i + &quot; Name&quot;)), CODE: {
+    [h: Weapon = getWeapon(i)]
+    [h: WeaponType = json.get(Weapon, &quot;Type&quot;)]
+    [h, if(WeaponType == Type || Type == &quot;Any&quot;):
+        Weapons = json.append(Weapons, Weapon)]
+    [h: i = i + 1]
+}]
+[h: macro.return = Weapons]</command>
+        <label>getWeapons</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>16</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>16</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Args = if(json.isEmpty(arg(0)), &quot;[]&quot;, arg(0))]
+[h: Position = arg(1)]
+[h: Default = arg(2)]
+[h, if(json.length(Args) &gt; Position), CODE: {
+    [h: macro.return = json.get(Args, Position)]
+};{
+    [h: macro.return = Default]
+}]</command>
+        <label>getArg</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>19</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>19</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Index = arg(0)]
+[h: Prefix = &quot;Weapon &quot; + Index + &quot; &quot;]
+[h: macro.return = json.set(&quot;{}&quot;,
+    &quot;Index&quot;, Index,
+    &quot;Name&quot;, getProperty(Prefix + &quot;Name&quot;),
+    &quot;Type&quot;, getPropertyWithDefault(Prefix + &quot;Type&quot;, &quot;None&quot;),
+    &quot;Damage&quot;, getProperty(Prefix + &quot;Damage&quot;),
+    &quot;Bonus&quot;, getPropertyWithDefault(Prefix + &quot; Bonus&quot;, 0)
+)]</command>
+        <label>getWeapon</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>18</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>18</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Array = arg(0)]
+[h: Key = arg(1)]
+[h: Result = &quot;[]&quot;]
+[h, foreach(Object, Array), CODE: {
+    [Result = json.append(Result, json.get(Object, Key))]
+}]
+[h: macro.return = Result]
+</command>
+        <label>json.getAll</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>21</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>21</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Filter = getArg(macro.args, 0, &quot;all&quot;)]
+[h: TokenList = getVisibleTokenNames(&quot;json&quot;)]
+[h: FilterList = &quot;[]&quot;]
+[h, if (Filter == &apos;npc&apos;): FilterList = getNPCNames(&quot;json&quot;)]
+[h, if (Filter == &apos;pc&apos;): FilterList = getPCNames(&quot;json&quot;)]
+[h, if (Filter == &apos;all&apos;): FilterList = TokenList]
+[h: Results = json.intersection(TokenList, FilterList)]
+[h: Libraries = json.fromList(&quot;Lib:Util,Lib:UI&quot;)]
+[h: macro.return = json.toList(json.difference(Results, Libraries))]</command>
+        <label>targetList</label>
+        <group>Mechanics</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>20</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>20</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: lev = getArg(macro.args, 0, getProperty(&quot;Level&quot;))]
+[h: xps = &quot;0,0,1000,2250,3750,5500,7500,10000,13000,16500,20500,26000,32000,39000,47000,57000,69000,83000,99000,119000,143000,175000,210000,255000,310000,375000,450000,550000,675000,825000,1000000&quot;]
+[h: macro.return = listGet(xps, lev)]</command>
+        <label>getLevelXP</label>
+        <group>Mechanics</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>23</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>23</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: macro.return = &quot;AC, Fortitude, Reflexes, Will&quot;]</command>
+        <label>defenseList</label>
+        <group>Mechanics</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>22</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>22</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: macro.return = &quot;Strength, Constitution, Dexterity, Intelligence, Wisdom, Charisma&quot;]</command>
+        <label>abilityList</label>
+        <group>Mechanics</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>25</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>25</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Target = currentToken()]
+[h: macro.return = floor(getProperty(&quot;Level&quot;, Target) / 2)]</command>
+        <label>halfLevel</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>24</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>24</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: macro.return =&quot;Acrobatics, Arcana, Athletics, Bluff, Diplomacy, Dungeoneering, Endurance, Heal, History, Insight, Intimidate, Nature, Perception, Religion, Stealth, Streetwise, Thievery&quot;]</command>
+        <label>skillList</label>
+        <group>Mechanics</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>27</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>27</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Target = arg(0)]
+[h: StateName = arg(1)]
+[h: Current = getState(StateName, Target)]
+[h: NewVal = getArg(macro.args, 2, Current)]
+[h: setState(StateName, NewVal, Target)]
+[h: macro.return = NewVal]
+</command>
+        <label>state</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>26</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>26</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Ability = arg(0)]
+[h: OppSkill = arg(1)]
+[h: Bonus = getArg(macro.args, 2, 0)]
+[h: Target = getArg(macro.args, 3, &quot;&quot;)]
+[h, if(Target == &quot;&quot;): Target = askForTarget(&quot;npc&quot;)]
+
+
+[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
+[h: AbilityMod = getAbilityMod(Ability)]
+[h: HalfLevel = halfLevel()]
+
+[h: Roll = 1d20]
+[h: Attack = Roll + AbilityMod + HalfLevel + Bonus + AttackMod]
+[h: AttackRoll = &quot;1d20 (&quot; + Roll + &quot;) + Modifier (&quot; + (Attack - Roll) + &quot;) = &quot; + Attack + &quot; vs. &quot; + OppSkill]
+[h: IsHit = hitCheck(Attack, Target, OppSkill)]
+[h: IsCritical = if(Roll == 20 &amp;&amp; IsHit, 1, 0)]
+[h: Description = if (IsCritical, &quot;scores a critical hit on&quot;, if (IsHit, &quot;hits&quot;, &quot;misses&quot;))]
+[h: Pronoun = listGet(pronouns(), 1)]
+
+[h: macro.return = json.set(&quot;&quot;,
+    &quot;Description&quot;, Description,
+    &quot;Roll&quot;, AttackRoll,
+    &quot;RawRoll&quot;, Roll,
+    &quot;Target&quot;, Target)]</command>
+        <label>singleAttack</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>28</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>28</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Ability = arg(0)]
+[h: OppSkill = arg(1)]
+[h: Result = &quot;[]&quot;]
+[h, foreach (Target, askForTarget(&quot;all&quot;, 1)), CODE: {
+
+	[h: Bonus = 0]
+	[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
+	[h: AbilityMod = getAbilityMod(Ability)]
+	[h: HalfLevel = halfLevel()]
+
+	[h: Roll = 1d20]
+	[h: Attack = Roll + AbilityMod + HalfLevel + Bonus + AttackMod]
+	[h: AttackRoll = &quot;1d20 (&quot; + Roll + &quot;) + Modifier (&quot; + (Attack - Roll) + &quot;) = &quot; + Attack + &quot; vs. &quot; + OppSkill]
+	[h: IsHit = hitCheck(Attack, Target, OppSkill)]
+	[h: IsCritical = if(Roll == 20 &amp;&amp; IsHit, 1, 0)]
+	[h: Description = if (IsCritical, &quot;scores a critical hit on&quot;, if (IsHit, &quot;hits&quot;, &quot;misses&quot;))]
+	[h: Pronoun = listGet(pronouns(), 1)]
+
+	[h: Result = json.append(Result, json.set(&quot;&quot;,
+	    &quot;Description&quot;, Description,
+	    &quot;Roll&quot;, AttackRoll,
+	    &quot;RawRoll&quot;, Roll,
+	    &quot;Target&quot;, Target))]
+}]
+
+[h: macro.return = Result]</command>
+        <label>multiAttack</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>

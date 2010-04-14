@@ -1,0 +1,312 @@
+<list>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>60</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me
+[h: Weapons = getWeapons()]
+[h: WeaponNames = json.toList(json.getAll(Weapons, &quot;Name&quot;))]
+[h: abort(input(
+    &quot;WeaponIndex|&quot; + WeaponNames + &quot;|Weapon|LIST|&quot;,
+    &quot;Target|&quot; + targetList() +&quot;|Target|RADIO|VALUE=STRING&quot;
+))]
+[h: Weapon = json.get(Weapons, WeaponIndex)]
+[h: Bonus = json.get(Weapon, &quot;Bonus&quot;)]
+[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
+[h: Ability = if(json.get(Weapon, &quot;Type&quot;) == &quot;Ranged&quot;, &quot;Dexterity&quot;, &quot;Strength&quot;)]
+[h: AbilityMod = getAbilityMod(Ability)]
+[h: HalfLevel = halfLevel()]
+
+[h: Roll = 1d20]
+[h: Attack = Roll + AbilityMod + Bonus + AttackMod + HalfLevel]
+[h: AttackRoll = &quot;1d20 (&quot; + Roll + &quot;) + Modifier (&quot; + (Attack - Roll) + &quot;) = &quot; + Attack + &quot; vs. AC&quot;]
+[h: IsHit = hitCheck(Attack, Target, &quot;AC&quot;)]
+[h: IsCritical = if(Roll == 20 &amp;&amp; IsHit, 1, 0)]
+[h: Description = if (IsCritical, &quot;scores a critical hit on&quot;, if (IsHit, &quot;hits&quot;, &quot;misses&quot;))]
+[h: Pronoun = listGet(pronouns(), 1)]
+
+[gt, st, t(Description): AttackRoll] {Target} with {Pronoun} {json.get(Weapon, &quot;Name&quot;)} </command>
+    <label>Basic Melee Attack</label>
+    <group>Abilities - General</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>23</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me
+[h: abort(input(&quot;SkillName|&quot; + skillList() +&quot;|Skill|LIST|VALUE=STRING&quot;, &quot;UserModifier|0|Modifier&quot;))]
+[h: SkillValue = getProperty(SkillName)]
+[h: SkillMod = getPropertyWithDefault(&quot;Mod &quot; + SkillName, 0)]
+[h: HalfLevel = halfLevel()]
+uses {listGet(pronouns(), 1)} [gt, st, t(SkillName): 1d20 + SkillValue + UserModifier + SkillMod + HalfLevel] skill</command>
+    <label>Use Skill</label>
+    <group>Abilities - General</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>24</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me
+[h: abort(input(
+    &quot;Apply Damage To|&quot; + token.name + &quot;||LABEL|&quot;,
+    &quot;Damage&quot;
+))]
+
+&lt;!-- Remove Normal HPs --&gt;
+takes [gt, st, t(&quot;damage&quot;): damage(Damage)]</command>
+    <label>Apply Damage</label>
+    <group>Damage and Healing</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>25</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me
+[h: abort(input(
+    &quot;Apply Healing To|&quot; + token.name + &quot;||LABEL|&quot;,
+    &quot;Health&quot;
+))]
+
+[gt, st, t(&quot;heals&quot;): heal(Health)]</command>
+    <label>Apply Healing</label>
+    <group>Damage and Healing</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>26</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me
+[h: ExtraHP = getPropertyWithDefault(&quot;Mod Surge Value&quot;, 0)]
+[h: SurgeValue = getProperty(&quot;Surge Value&quot;)]
+[h: Surges = getProperty(&quot;Healing Surges Remaining&quot;)]
+[h: assert(Surges &gt; 0 || state.Dying, &quot;No Surges Remaining&quot;)]
+
+[h: abort(input(
+    &quot;Healing Surge for |&quot; + token.name + &quot;||LABEL|&quot;,
+    &quot;Surge Value (HP)|&quot; + SurgeValue + &quot;||LABEL|&quot;,
+    &quot;ExtraHP | &quot; + ExtraHP + &quot;|Additional HP|TEXT|&quot;,
+    &quot;Available Surges |&quot; + Surges + &quot;||LABEL|&quot;
+))]
+
+[h: HealCalculation = if(!Surges &amp;&amp; state.Dying, &quot;1 + 0&quot;, SurgeValue + &quot; + &quot; + ExtraHP)]
+[h: HealValue = eval(HealCalculation)]
+[h: HealCalculation = HealCalculation + &quot; = &quot; + HealValue]
+
+[h: heal(HealValue)]
+uses a [gt, st, t(&quot;healing surge&quot;): HealCalculation]
+
+[h: setProperty(&quot;Healing Surges Remaining&quot;, max(Surges - 1, 0))]
+[h: setPropertyWithDefault(&quot;Mod Surge Value&quot;, 0, 0)]</command>
+    <label>Healing Surge</label>
+    <group>Damage and Healing</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>27</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: Stats = getHealthStats()]
+[h: abort(input(
+    &quot;Maximum HP|&quot; + json.get(Stats, &quot;MaxHP&quot;) + &quot;||LABEL|&quot;,
+    &quot;HP | &quot; + json.get(Stats, &quot;HP&quot;) + &quot;|Current HP|TEXT|&quot;,
+    &quot;TempHP | &quot; + json.get(Stats, &quot;TempHP&quot;) + &quot;|Temporary HP|TEXT|&quot;
+))]
+[h: Stats = json.set(Stats, &quot;HP&quot;, HP, &quot;TempHP&quot;, TempHP)]
+[h: setHealthStats(Stats)]</command>
+    <label>Modify HPs</label>
+    <group>Damage and Healing</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>28</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Modifier = getPropertyWithDefault(&quot;Mod Saving Throws&quot;, 0)]
+[h: abort(input(&quot;Modifier|&quot; + Modifier))]
+Attempts to save [gt, st, t(if(roll.result &lt; 10, &quot;but fails&quot;, &quot;and succeeds&quot;)): 1d20 + Modifier]</command>
+    <label>Saving Throw</label>
+    <group>Damage and Healing</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>29</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me ends {listGet(pronouns(), 1)} turn
+[h: nextInitiative()]</command>
+    <label>End Turn</label>
+    <group>Initiative</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>30</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Initiative = getProperty(&quot;Initiative&quot;)]
+[h: addToInitiative()]
+rolls [gt, st, t(&quot;initiative&quot;): setInitiative(1d20+ Initiative)].
+[h: sortInitiative()]</command>
+    <label>Roll Initiative</label>
+    <group>Initiative</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+</list>

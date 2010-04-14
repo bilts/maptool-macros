@@ -1,0 +1,136 @@
+<list>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>1</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: Players = targetList(&quot;pc&quot;)]
+[r, foreach (Player, targetList(&quot;pc&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+    [h: resetProperty(&quot;Temporary HP&quot;, Player)]
+    [h: DailySurges = getProperty(&quot;Surges Per Day&quot;, Player)]
+    [h: setProperty(&quot;Healing Surges Remaining&quot;, DailySurges, Player)]
+    [h: MaxHP = getProperty(&quot;Maximum HP&quot;, Player)]
+    [h: setProperty(&quot;Current HP&quot;, MaxHP, Player)]
+    [h: setProperty(&quot;Action Points Remaining&quot;, 1, Player)]
+    [r: player + &quot; finishes an extended rest.&quot;]
+}]
+[h, foreach (DeadGuy, getWithState(&quot;Dead&quot;)): removeToken(DeadGuy)]</command>
+    <label>Finish Extended Rest</label>
+    <group>DM</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>2</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: Players = targetList(&quot;pc&quot;)]
+[r, foreach (Player, targetList(&quot;pc&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+    [h: resetProperty(&quot;Temporary HP&quot;, Player)]
+    [r: Player + &quot; finishes a short rest.&quot;]
+}]
+[h, foreach (DeadGuy, getWithState(&quot;Dead&quot;)): removeToken(DeadGuy)]</command>
+    <label>Finish Short Rest</label>
+    <group>DM</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>3</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: Players = askForTarget(&quot;pc&quot;, 1)]
+[h: abort(input(&quot;XP&quot;))]
+[r, foreach (Player, targetList(&quot;pc&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+    [h: CurrXP = getProperty(&quot;Experience&quot;, Player)]
+    [h: setProperty(&quot;Experience&quot;, CurrXP + XP, Player)]
+    {Player} gains {XP} XP
+}]</command>
+    <label>Grant XP</label>
+    <group>DM</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>4</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: Players = askForTarget(&quot;pc&quot;, 1)]
+[h: abort(input(&quot;Gold&quot;))]
+[h: Split = floor(Gold/listCount(Players))]
+[h: GoldSplit = floor(Split / 100)]
+[r, foreach (Player, targetList(&quot;pc&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+    [h: Money = getProperty(&quot;Money on hand&quot;, Player)]
+    [h: setProperty(&quot;Money on hand&quot;, Money + Split, Player)]
+    {Player} gains
+    [r, if(GoldSplit &gt; 0): GoldSplit + &quot;gp&quot;]
+}]</command>
+    <label>Split Gold</label>
+    <group>DM</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+</list>

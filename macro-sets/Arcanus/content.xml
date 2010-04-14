@@ -1,0 +1,346 @@
+<list>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>1</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Intelligence&quot;, &quot;Fortitude&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with Ray of Frost
+</command>
+    <label>Ray of Frost</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>5</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me casts Icy Terrain, making the blast area difficult terrain until the end of his next turn&lt;br&gt;
+[r, foreach (Result, multiAttack(&quot;Intelligence&quot;, &quot;Reflexes&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; He [st, gt, t(Description): Roll] {Target}
+}]</command>
+    <label>Icy Terrain</label>
+    <group>Abilities - Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>7</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Result = singleAttack(&quot;Intelligence&quot;, &quot;Reflexes&quot;)]
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+[st, gt, t(Description): Roll] {Target} with a flaming sphere
+</command>
+    <label>Flaming Sphere</label>
+    <group>Abilities - Daily</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>12</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Intelligence&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d6 + AbilityMod], and the target is slowed until the end of Arcanus&apos; next turn
+</command>
+    <label>Ray of Frost Damage</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>13</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me casts Scorching Burst &lt;br&gt;
+[r, foreach (Result, multiAttack(&quot;Intelligence&quot;, &quot;Reflexes&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; He [st, gt, t(Description): Roll] {Target}
+}]</command>
+    <label>Scorching Burst</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>14</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Intelligence&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d6 + AbilityMod] to each target
+</command>
+    <label>Scorching Burst Damage</label>
+    <group>Abilities - At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>15</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Intelligence&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 2d6 + AbilityMod]
+</command>
+    <label>Flaming Sphere Damage</label>
+    <group>Abilities - Daily</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>17</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Intelligence&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d8 + AbilityMod] to each target.
+</command>
+    <label>F. C. Hit Damage</label>
+    <group>Abilities - Daily</group>
+    <sortby>Freezing</sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>16</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me creates a freezing cloud until the end of his next turn.  Any creature which enters the cloud or starts its turn there will be subject to an attack. &lt;br&gt;
+[r, foreach (Result, multiAttack(&quot;Intelligence&quot;, &quot;Fortitude&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; He [st, gt, t(Description): Roll] {Target}
+}]</command>
+    <label>Freezing Cloud</label>
+    <group>Abilities - Daily</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>19</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Intelligence&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): 1d6 + AbilityMod] to each target, and each target is knocked prone</command>
+    <label>Icy Terrain Damage</label>
+    <group>Abilities - Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>18</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Intelligence&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+deals [gt, st, t(&quot;damage&quot;): floor((1d8 + AbilityMod) / 2)] to each target.
+</command>
+    <label>F. C. Miss Damage</label>
+    <group>Abilities - Daily</group>
+    <sortby>Freezing</sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+</list>
