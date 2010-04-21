@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAfHkim6gAQAAQIgAAQ==</baGUID>
+    <baGUID>wKgBAYavjiHzAQAAAIgBAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -11,8 +11,8 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1100</x>
-  <y>400</y>
+  <x>1150</x>
+  <y>450</y>
   <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
@@ -54,19 +54,11 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Other2</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>Other</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Other3</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Prone</string>
+      <string>Other2</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -74,15 +66,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dying</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Bloodied</string>
+      <string>Dead</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Dead</string>
+      <string>Bloodied</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -1737,8 +1737,9 @@
         <hotKey>None</hotKey>
         <command>[h: Ability = arg(0)]
 [h: OppSkill = arg(1)]
+[h: Type = getArg(macro.args, 2, &quot;all&quot;)]
 [h: Result = &quot;[]&quot;]
-[h, foreach (Target, askForTarget(&quot;all&quot;, 1)), CODE: {
+[h, foreach (Target, askForTarget(Type, 1)), CODE: {
 
 	[h: Bonus = 0]
 	[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
