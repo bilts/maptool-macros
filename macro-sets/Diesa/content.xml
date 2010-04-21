@@ -1,6 +1,36 @@
 <list>
   <net.rptools.maptool.model.MacroButtonProperties>
     <saveLocation>Token</saveLocation>
+    <index>16</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Strength&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+[h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
+deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod]</command>
+    <label>Precise Strike</label>
+    <group>Damage</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
     <index>5</index>
     <colorKey>default</colorKey>
     <hotKey>None</hotKey>
@@ -35,11 +65,13 @@ deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod] and also [g
     <colorKey>default</colorKey>
     <hotKey>None</hotKey>
     <command>/me 
-[h: AttackList = &quot;Attack|Basic Melee Attack,Cleave,Reaping Strike,Covering Attack,Tempest Dance|Attack|LIST|VALUE=STRING&quot;]
+[h: AttackList = &quot;Attack|Basic Melee Attack,Cleave,Precise Strike,Reaping Strike,Shield Bash,Tempest Dance|Attack|LIST|VALUE=STRING&quot;]
 [h: TargetList = &quot;Target|&quot; + targetList(&quot;npc&quot;) +&quot;|Target|RADIO|VALUE=STRING&quot;]
 [h: abort(input(AttackList, TargetList))]
 
-[h: Bonus = 3 + halfLevel()]
+[h: WeaponDamage = 3]
+[h: Bonus = if(Attack == &quot;Shield Bash&quot;, 2, WeaponDamage) + halfLevel()]
+[h, if (Attack == &quot;Precise Strike&quot;): Bonus = Bonus + 4]
 [h: Result = singleAttack(&quot;Strength&quot;, &quot;AC&quot;, Bonus, Target)]
 [h: Description = json.get(Result, &quot;Description&quot;)]
 [h: Roll = json.get(Result, &quot;Roll&quot;)]
@@ -135,8 +167,8 @@ deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod]</command>
 [h: Ability = &quot;Strength&quot;]
 [h: AbilityMod = getAbilityMod(Ability)]
 [h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
-deals [gt, st, t(&quot;damage&quot;): 2d10 + AbilityMod + DamageMod] and allows an ally adjacent to the target to shift two squares</command>
-    <label>Covering Attack</label>
+deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod] and pushes the target 1 square.  The target is knocked prone.</command>
+    <label>Shield Bash</label>
     <group>Damage</group>
     <sortby>b</sortby>
     <autoExecute>true</autoExecute>
@@ -200,6 +232,36 @@ deals [gt, st, t(&quot;damage&quot;): 1d10 + DamageMod + AbilityMod]</command>
     <label>Tempest Dance (no C.A.)</label>
     <group>Damage</group>
     <sortby>c</sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>15</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Strength&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+[h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
+deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod]</command>
+    <label>Basic Melee</label>
+    <group>Damage</group>
+    <sortby></sortby>
     <autoExecute>true</autoExecute>
     <includeLabel>false</includeLabel>
     <applyToTokens>false</applyToTokens>
