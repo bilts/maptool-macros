@@ -36,8 +36,8 @@ deals [gt, st, t(&quot;curse damage&quot;): 1d6 + DamageMod]</command>
 [h: Ability = &quot;Charisma&quot;]
 [h: AbilityMod = getAbilityMod(Ability)]
 [h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
-deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod]</command>
-    <label>Chaos Bolt Damage</label>
+deals [gt, st, t(&quot;thunder damage&quot;): 1d8 + AbilityMod + DamageMod].</command>
+    <label>Storm Walk Damage</label>
     <group>Encounter</group>
     <sortby></sortby>
     <autoExecute>true</autoExecute>
@@ -93,14 +93,15 @@ deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + DamageMod]
     <index>7</index>
     <colorKey>default</colorKey>
     <hotKey>None</hotKey>
-    <command>/me 
-[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Will&quot;)]
+    <command>/me may shift one square before or after his Storm Walk attack
+/me 
+[h: Result = singleAttack(&quot;Charisma&quot;, &quot;Fortitude&quot;)]
 [h: Description = json.get(Result, &quot;Description&quot;)]
 [h: Roll = json.get(Result, &quot;Roll&quot;)]
 [h: Target = json.get(Result, &quot;Target&quot;)]
 
-[st, gt, t(Description): Roll] {Target} with Chaos Bolt</command>
-    <label>Chaos Bolt</label>
+[st, gt, t(Description): Roll] {Target} with Storm Walk</command>
+    <label>Storm Walk</label>
     <group>Encounter</group>
     <sortby></sortby>
     <autoExecute>true</autoExecute>
