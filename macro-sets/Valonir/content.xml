@@ -256,7 +256,8 @@ deals [gt, st, t(&quot;damage&quot;): 1d6 + AbilityMod + DamageMod], and is invi
 [h: Ability = &quot;Charisma&quot;]
 [h: AbilityMod = getAbilityMod(Ability)]
 [h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
-deals [gt, st, t(&quot;damage&quot;): 2d6 + AbilityMod + DamageMod], and the target makes a -2 penalty to attack rolls until the end of {getName()}&apos;s next turn</command>
+[h: FeyPactMod = getAbilityMod(&quot;Intelligence&quot;)]
+deals [gt, st, t(&quot;damage&quot;): 2d6 + AbilityMod + DamageMod], and the target takes a [gt, st, t(&quot;penalty&quot;): -2 + -FeyPactMod] to attack rolls until the end of {getName()}&apos;s next turn</command>
     <label>Witchfire Damage</label>
     <group>Encounter</group>
     <sortby></sortby>
