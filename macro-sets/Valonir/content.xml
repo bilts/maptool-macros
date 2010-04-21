@@ -1,34 +1,6 @@
 <list>
   <net.rptools.maptool.model.MacroButtonProperties>
     <saveLocation>Token</saveLocation>
-    <index>16</index>
-    <colorKey>default</colorKey>
-    <hotKey>None</hotKey>
-    <command>/me 
-[h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
-deals [gt, st, t(&quot;curse damage&quot;): 1d6 + DamageMod]</command>
-    <label>Warlock&apos;s Curse Damage</label>
-    <group>At Will</group>
-    <sortby></sortby>
-    <autoExecute>true</autoExecute>
-    <includeLabel>false</includeLabel>
-    <applyToTokens>false</applyToTokens>
-    <fontColorKey>black</fontColorKey>
-    <fontSize>1.00em</fontSize>
-    <minWidth></minWidth>
-    <maxWidth></maxWidth>
-    <allowPlayerEdits>true</allowPlayerEdits>
-    <toolTip></toolTip>
-    <commonMacro>false</commonMacro>
-    <compareGroup>true</compareGroup>
-    <compareSortPrefix>true</compareSortPrefix>
-    <compareCommand>true</compareCommand>
-    <compareIncludeLabel>true</compareIncludeLabel>
-    <compareAutoExecute>true</compareAutoExecute>
-    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-  </net.rptools.maptool.model.MacroButtonProperties>
-  <net.rptools.maptool.model.MacroButtonProperties>
-    <saveLocation>Token</saveLocation>
     <index>4</index>
     <colorKey>default</colorKey>
     <hotKey>None</hotKey>
@@ -354,6 +326,101 @@ deals [gt, st, t(&quot;damage&quot;): 3d8 + AbilityMod + DamageMod] and slides t
 curses {Target}</command>
     <label>Warlock&apos;s Curse</label>
     <group>At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>17</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me attacks with Eldritch Rain &lt;br&gt;
+[r, foreach (Result, multiAttack(&quot;Charisma&quot;, &quot;Reflexes&quot;, &quot;npc&quot;), &quot;&lt;br&gt;&quot;), CODE: {
+[h: Description = json.get(Result, &quot;Description&quot;)]
+[h: Roll = json.get(Result, &quot;Roll&quot;)]
+[h: Target = json.get(Result, &quot;Target&quot;)]
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; He [st, gt, t(Description): Roll] {Target}
+}]
+</command>
+    <label>Eldritch Rain</label>
+    <group>Encounter</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>16</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
+deals [gt, st, t(&quot;curse damage&quot;): 1d6 + DamageMod]</command>
+    <label>Warlock&apos;s Curse Damage</label>
+    <group>At Will</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>false</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>true</allowPlayerEdits>
+    <toolTip></toolTip>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <saveLocation>Token</saveLocation>
+    <index>18</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>/me 
+[h: Ability = &quot;Charisma&quot;]
+[h: AbilityMod = getAbilityMod(Ability)]
+[h: FeyPactAbility = &quot;Intelligence&quot;]
+[h: FeyPactAbilityMod = getAbilityMod(FeyPactAbility)]
+[h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
+deals [gt, st, t(&quot;damage&quot;): 1d10 + AbilityMod + FeyPactAbilityMod + DamageMod]
+/self Run this macro once per target</command>
+    <label>Eldritch Rain Damage</label>
+    <group>Encounter</group>
     <sortby></sortby>
     <autoExecute>true</autoExecute>
     <includeLabel>false</includeLabel>
