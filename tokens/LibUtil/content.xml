@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAYavjiHzAQAAAIgBAA==</baGUID>
+    <baGUID>wKgAA6iw6yIQHQAAAKgAAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -1729,6 +1729,49 @@
       </net.rptools.maptool.model.MacroButtonProperties>
     </entry>
     <entry>
+      <int>29</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>29</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Health = arg(0)]
+[h: Player = arg(1)]
+
+[h: switchToken(Player)]
+
+[h: stats = getHealthStats()]
+[h: HP = json.get(stats, &quot;TempHP&quot;)]
+
+&lt;!-- Calculate healing --&gt;
+[h: NewHP = max(HP, Health))]
+
+[h: stats = json.set(stats, &quot;TempHP&quot;, NewHP)]
+[h: setHealthStats(stats)]
+
+[h: macro.return = Health]</command>
+        <label>grantTempHp</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
       <int>28</int>
       <net.rptools.maptool.model.MacroButtonProperties>
         <saveLocation>Token</saveLocation>
@@ -1737,9 +1780,8 @@
         <hotKey>None</hotKey>
         <command>[h: Ability = arg(0)]
 [h: OppSkill = arg(1)]
-[h: Type = getArg(macro.args, 2, &quot;all&quot;)]
 [h: Result = &quot;[]&quot;]
-[h, foreach (Target, askForTarget(Type, 1)), CODE: {
+[h, foreach (Target, askForTarget(&quot;all&quot;, 1)), CODE: {
 
 	[h: Bonus = 0]
 	[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
