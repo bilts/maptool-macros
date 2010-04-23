@@ -4,8 +4,9 @@
     <unzip src="dist/All.mtmacset" dest="macro-sets/All" />
     <unzip src="dist/Arcanus.mtmacset" dest="macro-sets/Arcanus" />
     <unzip src="dist/Diesa.mtmacset" dest="macro-sets/Diesa" />
-    <unzip src="dist/DM.mtmacset" dest="macro-sets/DM" />
+    <unzip src="dist/Timo.mtmacset" dest="macro-sets/Timo" />
     <unzip src="dist/Valonir.mtmacset" dest="macro-sets/Valonir" />
+    <unzip src="dist/DM.rptok" dest="tokens/DM" />
     <unzip src="dist/LibUtil.rptok" dest="tokens/LibUtil" />
   </target>
   <target name="pack" description="Pack all of the macros for import into maptool">
@@ -14,8 +15,9 @@
     <zip destfile="dist/All.mtmacset" basedir="macro-sets/All" />
     <zip destfile="dist/Arcanus.mtmacset" basedir="macro-sets/Arcanus" />
     <zip destfile="dist/Diesa.mtmacset" basedir="macro-sets/Diesa" />
-    <zip destfile="dist/DM.mtmacset" basedir="macro-sets/DM" />
+    <zip destfile="dist/Timo.mtmacset" basedir="macro-sets/Timo" />
     <zip destfile="dist/Valonir.mtmacset" basedir="macro-sets/Valonir" />
+    <zip destfile="dist/DM.rptok" basedir="tokens/DM" />
     <zip destfile="dist/LibUtil.rptok" basedir="tokens/LibUtil" />
   </target>  
 </project>
