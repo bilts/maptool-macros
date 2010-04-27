@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAZnKAS3GCgAAAAAAAQ==</baGUID>
+    <baGUID>wKgBAZ71jz3KLQAAAIgBAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -11,8 +11,8 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1050</x>
-  <y>400</y>
+  <x>950</x>
+  <y>450</y>
   <z>9</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
@@ -54,19 +54,11 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Other</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>Other2</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Hidden</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Prone</string>
+      <string>Other</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -74,15 +66,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dying</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Dead</string>
+      <string>Bloodied</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Bloodied</string>
+      <string>Dead</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -1471,7 +1471,7 @@
 [h, if (Filter == &apos;pc&apos;): FilterList = getPCNames(&quot;json&quot;)]
 [h, if (Filter == &apos;all&apos;): FilterList = TokenList]
 [h: Results = json.intersection(TokenList, FilterList)]
-[h: Libraries = json.fromList(&quot;Lib:Util,Lib:UI,DM&quot;)]
+[h: Libraries = json.fromList(&quot;Lib:Util,Lib:UI,Lib:Skills,DM&quot;)]
 [h: macro.return = json.toList(json.difference(Results, Libraries))]</command>
         <label>targetList</label>
         <group>Mechanics</group>
@@ -1484,6 +1484,7 @@
         <minWidth></minWidth>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
         <compareSortPrefix>true</compareSortPrefix>
@@ -1561,35 +1562,6 @@
         <command>[h: macro.return = &quot;Strength, Constitution, Dexterity, Intelligence, Wisdom, Charisma&quot;]</command>
         <label>abilityList</label>
         <group>Mechanics</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>false</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
-    </entry>
-    <entry>
-      <int>25</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <saveLocation>Token</saveLocation>
-        <index>25</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: Target = currentToken()]
-[h: macro.return = floor(getProperty(&quot;Level&quot;, Target) / 2)]</command>
-        <label>halfLevel</label>
-        <group>Player</group>
         <sortby></sortby>
         <autoExecute>true</autoExecute>
         <includeLabel>false</includeLabel>
@@ -1777,25 +1749,24 @@
 [h: Result = &quot;[]&quot;]
 [h, foreach (Target, askForTarget(&quot;all&quot;, 1)), CODE: {
 
-	[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
-	[h: AbilityMod = getAbilityMod(Ability)]
-	[h: HalfLevel = halfLevel()]
+    [h: Bonus = 0]
+    [h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
+    [h: AbilityMod = getAbilityMod(Ability)]
+    [h: HalfLevel = halfLevel()]
 
-	[h: Roll = 1d20]
-	[h: Attack = Roll + AbilityMod + HalfLevel + AttackMod]
-	[h: AttackRoll = &quot;1d20 (&quot; + Roll + &quot;) + Modifier (&quot; + (Attack - Roll) + &quot;) = &quot; + Attack + &quot; vs. &quot; + OppSkill]
-	[h: IsHit = hitCheck(Attack, Target, OppSkill)]
-	[h: IsCritical = if(Roll == 20 &amp;&amp; IsHit, 1, 0)]
-	[h: Description = if (IsCritical, &quot;scores a critical hit on&quot;, if (IsHit, &quot;hits&quot;, &quot;misses&quot;))]
-	[h: Pronoun = listGet(pronouns(), 1)]
+    [h: Roll = 1d20]
+    [h: Attack = Roll + AbilityMod + HalfLevel + Bonus + AttackMod]
+    [h: AttackRoll = &quot;1d20 (&quot; + Roll + &quot;) + Modifier (&quot; + (Attack - Roll) + &quot;) = &quot; + Attack + &quot; vs. &quot; + OppSkill]
+    [h: IsHit = hitCheck(Attack, Target, OppSkill)]
+    [h: IsCritical = if(Roll == 20 &amp;&amp; IsHit, 1, 0)]
+    [h: Description = if (IsCritical, &quot;scores a critical hit on&quot;, if (IsHit, &quot;hits&quot;, &quot;misses&quot;))]
+    [h: Pronoun = listGet(pronouns(), 1)]
 
-	[h: Result = json.append(Result, json.set(&quot;&quot;,
-    		&quot;Description&quot;, Description,
-		&quot;Roll&quot;, AttackRoll,
-    		&quot;RawRoll&quot;, Roll,
-    		&quot;Target&quot;, Target,
-    		&quot;IsHit&quot;, IsHit,
-    		&quot;IsCritical&quot;, IsCritical)]
+    [h: Result = json.append(Result, json.set(&quot;&quot;,
+        &quot;Description&quot;, Description,
+        &quot;Roll&quot;, AttackRoll,
+        &quot;RawRoll&quot;, Roll,
+        &quot;Target&quot;, Target))]
 }]
 
 [h: macro.return = Result]</command>
@@ -1810,6 +1781,7 @@
         <minWidth></minWidth>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
         <compareSortPrefix>true</compareSortPrefix>
@@ -1860,7 +1832,7 @@
         <hotKey>None</hotKey>
         <command>[h: abort(getPropertyWithDefault(&quot;Allow Macros&quot;, 1))]
 [h: json.unpack(arg(0))]
-{Player} damages {Target}.  {Extra}
+{Player} deals damage to {Target}.  {Extra}
 [h: switchToken(Target)]
 [h: damage(Damage)]</command>
         <label>allowDamage</label>
@@ -1920,52 +1892,49 @@
         <index>32</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>&lt;!-- [gm, r: macroLink(&quot;Allow&quot;, &quot;suspendMacros@Lib:Util&quot;, &quot;none&quot;, &quot;&quot;, &quot;DM&quot;) + &quot;, &quot;] --&gt;
-[h: Attack = arg(0)]
-[h: Props = arg(1)]
+        <command>[h: Props = arg(0)]
 [h: OptionalArgs = json.set(&quot;&quot;,
-    &quot;When&quot;, &quot;hit&quot;,
     &quot;Ability&quot;, &quot;&quot;,
     &quot;Dice&quot;, 0,
     &quot;Sides&quot;, 0,
     &quot;Bonus&quot;, 0,
-    &quot;Extra&quot;, &quot;&quot;,
-    &quot;DamageType&quot;, &quot;&quot;)]
+    &quot;Multiplier&quot;, 1)]
+[h: DamageRoll = getArg(macro.args, 1, 0)]
 
-[h: json.unpack(Attack)]
 [h: json.unpack(Props, OptionalArgs)]
 
 [h: DamageMod = getPropertyWithDefault(&quot;Mod Damage&quot;, 0)]
 [h: AbilityMod = 0]
 [h, if(Ability != &quot;&quot;): AbilityMod = getAbilityMod(Ability)]
-[h: Indent = &quot;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &quot;]
 
-[h: HitType = if(IsHit, &quot;hit&quot;, &quot;miss&quot;)]
-[h: Applicable = if(When == HitType || When == &quot;Any&quot;, 1, 0)]
-[h: DamageRoll = if(IsCritical, Dice * Sides, d(Dice, Sides))]
+[h: DamageRoll = if(DamageRoll == 0, d(Dice, Sides), DamageRoll)]
 [h: RollStr = Dice + &quot;d&quot; + Sides + &quot; + Ability + Bonus + ModDmg&quot;]
 [h: RollResultStr = DamageRoll + &quot; + &quot; + AbilityMod + &quot; + &quot; + Bonus + &quot; + &quot; + DamageMod]
+[h: CritRollResultStr = Dice*Sides + &quot; + &quot; + AbilityMod + &quot; + &quot; + Bonus + &quot; + &quot; + DamageMod]
 
-[st, gt, t(Description): Roll] {Target} with {Power}.
+[h: macro.return = json.set(&quot;&quot;, 
+    &quot;Damage&quot;, 0, 
+    &quot;RollCalc&quot;, &quot;&quot;, 
+    &quot;CriticalDamage&quot;, 0,
+    &quot;CriticalRollCalc&quot;, &quot;&quot;)]
 
-[s, gm, r, if(Applicable &amp;&amp; DamageRoll + AbilityMod + Bonus), CODE: {
-    [h: Damage = DamageRoll + AbilityMod + Bonus+ DamageMod]
+[h, if(DamageRoll + AbilityMod + Bonus), CODE: {
+    [h: Damage = DamageRoll + AbilityMod + Bonus + DamageMod]
+    [h: CriticalDamage = Dice*Sides + AbilityMod + Bonus + DamageMod]
     [h: RollCalc = &quot;Damage = &quot; + RollStr + &quot; = &quot; + RollResultStr + &quot; = &quot; + Damage]
-    [h: DmArgs = json.set(&quot;&quot;, 
-            &quot;Damage&quot;, Damage, 
-            &quot;DamageType&quot;, DamageType, 
-            &quot;Extra&quot;, Extra, 
-            &quot;Player&quot;, getName(),
-            &quot;Target&quot;, Target)]
-    
-    [st, gt, t(&quot;( &quot; + DamageType + &quot; Damage )&quot;): RollCalc]
-    &lt;font color=&quot;blue&quot;&gt;
-    [gm, r: macroLink(&quot;Allow&quot;, &quot;allowDamage@Lib:Util&quot;, &quot;all&quot;, DmArgs, &quot;DM&quot;) + &quot;, &quot;]
-    [gm, r: macroLink(&quot;Deny&quot;, &quot;denyDamage@Lib:Util&quot;, &quot;all&quot;, DmArgs, &quot;DM&quot;) + &quot;, &quot;]
-    [gm, r: macroLink(&quot;Modify&quot;, &quot;modifyDamage@Lib:Util&quot;, &quot;all&quot;, DmArgs, &quot;DM&quot;)]
-    &lt;/font&gt;
-};{{&quot;&amp;nbsp&quot;}}]
-&lt;!-- [gm, r: macroLink(&quot;Allow&quot;, &quot;resumeMacros@Lib:Util&quot;, &quot;none&quot;, &quot;&quot;, &quot;DM&quot;) + &quot;, &quot;] --&gt;</command>
+    [h: Damage = floor(Damage * Multiplier)]
+    [h: RollCalc = RollCalc + if(Multiplier == 1, &quot;&quot;, &quot; * &quot; + Multiplier + &quot; = &quot; + Damage)]
+    [h: CriticalRollCalc = &quot;CriticalDamage = &quot; + RollStr + &quot; = &quot; + CritRollResultStr + &quot; = &quot; + CriticalDamage]
+    [h: CriticalDamage = floor(CriticalDamage * Multiplier)]
+    [h: CriticalRollCalc = CriticalRollCalc + if(Multiplier == 1, &quot;&quot;, &quot; * &quot; + Multiplier + &quot; = &quot; + CriticalDamage)]
+    [h: macro.return = json.set(macro.return,
+        &quot;Damage&quot;, Damage,
+        &quot;DamageRoll&quot;, RollCalc,
+        &quot;DamageDiceRoll&quot;, DamageRoll,
+        &quot;CriticalDamage&quot;, CriticalDamage,
+        &quot;CriticalDamageRoll&quot;, CriticalRollCalc)]
+}]
+</command>
         <label>rollDamage</label>
         <group>Player</group>
         <sortby>a</sortby>
@@ -2016,6 +1985,7 @@
         <minWidth></minWidth>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
         <compareSortPrefix>true</compareSortPrefix>
@@ -2116,6 +2086,7 @@
         <minWidth></minWidth>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
         <compareSortPrefix>true</compareSortPrefix>
@@ -2154,20 +2125,88 @@
       </net.rptools.maptool.model.MacroButtonProperties>
     </entry>
     <entry>
+      <int>43</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>43</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Target = currentToken()]
+[h: macro.return = floor(getProperty(&quot;Level&quot;, Target) / 2)]</command>
+        <label>halfLevel</label>
+        <group>Mechanics</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
       <int>40</int>
       <net.rptools.maptool.model.MacroButtonProperties>
         <saveLocation>Token</saveLocation>
         <index>40</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: Attack = arg(0)]
-[h: Props = arg(1)]
-[h: json.unpack(Attack)]
-[h: json.unpack(Props)]
+        <command>[h: DamageType = &quot;&quot;]
+[h: Power = arg(0)]
+[h: AttackResult = arg(1)]
+[h: ApplicableResult = arg(2)]
+[h: Damage = arg(3)]
 
-[h: macro.return = tooltipStr(Description, Roll) + &quot; &quot; + Target + &quot; with &quot; + Power]
+[h: Props = json.get(Power, ApplicableResult)]
 
-</command>
+[h: json.unpack(Power)]
+[h: json.unpack(AttackResult)]
+[h: json.unpack(Damage)]
+[h: Result = json.get(Power, ApplicableResult)]
+[h: json.unpack(Result, json.set(&quot;&quot;, &quot;Extra&quot;, &quot;&quot;))]
+
+[h: HitType = if(IsHit, &quot;Hit&quot;, &quot;Miss&quot;)]
+[h: Applicable = if(ApplicableResult == HitType || ApplicableResult == &quot;Effect&quot;, 1, 0)]
+
+&lt;!-- Needed for strformat expressions in Extra param --&gt;
+[h: Player = getName()]
+
+
+[r, if(ApplicableResult == HitType), CODE: {
+    &lt;br&gt;{getName()}
+    [gt, st, t(Description): Roll] {Target}. 
+};{&lt;!-- --&gt;}]
+
+[r, if(Applicable &amp;&amp; Damage != 0), CODE: {
+    [h: Damage = if(IsCritical, CriticalDamage, Damage)]
+    [h: DamageRoll = if(IsCritical, CriticalDamageRoll, DamageRoll)]
+    [h: DmArgs = json.set(&quot;&quot;, 
+            &quot;Damage&quot;, Damage, 
+            &quot;DamageType&quot;, DamageType, 
+            &quot;Extra&quot;, strformat(Extra), 
+            &quot;Player&quot;, getName(),
+            &quot;Target&quot;, Target)]
+    [st, gt, t(&quot;( &quot; + DamageType + &quot; Damage )&quot;): DamageRoll]
+    &lt;font color=&quot;blue&quot;&gt;
+        [gm, r: macroLink(&quot;Allow&quot;, &quot;allowDamage@Lib:Util&quot;, &quot;all&quot;, DmArgs, &quot;DM&quot;) + &quot;,&quot;]
+        [gm, r: macroLink(&quot;Deny&quot;, &quot;denyDamage@Lib:Util&quot;, &quot;all&quot;, DmArgs, &quot;DM&quot;) + &quot;,&quot; ]
+        [gm, r: macroLink(&quot;Modify&quot;, &quot;modifyDamage@Lib:Util&quot;, &quot;all&quot;, DmArgs, &quot;DM&quot;)]
+    &lt;/font&gt;
+};{&lt;!-- --&gt;}]
+[r, if(Applicable &amp;&amp; Damage == 0), CODE: {
+    [r: if(Extra != &quot;&quot;, &quot;&lt;br&gt;&quot; , &quot;&quot;)]
+    {strformat(Extra)}
+};{&lt;!-- --&gt;}]
+[h: macro.return = &quot;&quot;]</command>
         <label>describeAttackResult</label>
         <group>Player</group>
         <sortby></sortby>
@@ -2208,6 +2247,661 @@
         <minWidth></minWidth>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>46</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>46</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Defaults = json.set(&quot;&quot;,
+    &quot;Ability&quot;, &quot;&quot;,
+    &quot;Opposed&quot;, &quot;&quot;,
+    &quot;Bonus&quot;, 0)]
+
+[h: json.unpack(arg(0), Defaults)]
+
+Using {Name}
+
+[h, if(Targets &gt; 0): TargetTokens = askForTarget(TargetType, Targets - 1)]
+
+[r, if(Ability != &quot;&quot; &amp;&amp; Opposed != &quot;&quot; &amp;&amp; Targets &gt; 0), CODE: {
+    [h: HitDamage = rollDamage(Hit)]
+    [h: Multiplier = json.get(Miss, &quot;Multiplier&quot;)]
+    [h: MissRoll = if(Multiplier &amp;&amp; Multiplier != 1 &amp;&amp; json.get(Miss, &quot;Dice&quot;), json.get(HitDamage, &quot;DamageDiceRoll&quot;), 0)]
+    [h: MissDamage = rollDamage(Miss, MissRoll)]
+    [r, foreach(Target, TargetTokens, &quot;&quot;), CODE: {
+        [h: AttackResult = singleAttack(Ability, Opposed, Bonus, Target)]
+        [r: describeAttackResult(arg(0), AttackResult, &quot;Hit&quot;, HitDamage)]
+        [r: describeAttackResult(arg(0), AttackResult, &quot;Miss&quot;, MissDamage)]
+    }]
+};{ &lt;!-- --&gt; }]
+
+[h: EffectDamage = rollDamage(Effect)]
+[h: DummyAttack = json.set(&quot;&quot;,
+    &quot;Description&quot;, &quot;&quot;,
+    &quot;Roll&quot;, 0,
+    &quot;RawRoll&quot;, &quot;&quot;,
+    &quot;Target&quot;, &quot;&quot;,
+    &quot;IsHit&quot;, 0,
+    &quot;IsCritical&quot;, 0)]
+[r, if(json.get(EffectDamage, &quot;Damage&quot;) != 0), CODE: {
+    [r, foreach(Target, TargetTokens, &quot;&quot;), CODE: { 
+        [h: Roll = &quot;Not Applicable&quot;]
+        &lt;br&gt;[r: getName()] [st, gt, t(&quot;hits&quot;) : Roll] [r: Target]
+        [r: describeAttackResult(arg(0), json.set(DummyAttack, &quot;Target&quot;, Target), &quot;Effect&quot;, EffectDamage)]
+    }]
+};{
+    [r: describeAttackResult(arg(0), DummyAttack, &quot;Effect&quot;, EffectDamage)]
+}]
+</command>
+        <label>usePower</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>47</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>47</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: macro.return  = &quot;&lt;br&gt;&quot; + getName() + &quot;: &quot;]</command>
+        <label>emote</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>44</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>44</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- [gm, r: macroLink(&quot;Suspend Macros&quot;, &quot;suspendMacros@Lib:Util&quot;, &quot;none&quot;, &quot;&quot;, &quot;DM&quot;) + &quot;, &quot;] --&gt;</command>
+        <label>suspendLink</label>
+        <group>DM</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>45</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>45</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- [gm, r: macroLink(&quot;Resume Macros&quot;, &quot;resumeMacros@Lib:Util&quot;, &quot;none&quot;, &quot;&quot;, &quot;DM&quot;) + &quot;, &quot;] --&gt;</command>
+        <label>resumeLink</label>
+        <group>DM</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>51</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>51</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>.oddRow { background-color: #FFFFFF }
+.evenRow { background-color: #EEEEAA }
+#stats th { background-color: #113311; color: #FFFFFF; text-align:left;}
+.WeaponName a {
+    background-color: #55AA55;
+    color: white;
+    text-align: center;
+}
+.page a {
+} 
+.currentPage a {
+   color: #880000;
+}
+#powers {
+    color:white;
+    font-weight:bold;
+    width:100%;
+}
+#powers a {
+    color:white;
+    font-weight:bold;
+}
+th {
+    text-align:left;
+    padding:4px;
+}
+td {
+    text-align:right;
+    padding:4px;
+}
+.a-at-will {
+    background-color:#008800;
+}
+.b-encounter {
+    background-color:#880000;
+}
+.c-daily {
+    background-color:#666666;
+}
+.d-other {
+    background-color:#000088;
+}</command>
+        <label>CssCharSheet</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>50</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>50</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: propNames = &quot;Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma&quot;] 
+     &lt;table&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;img src=&apos;[r: getTokenImage(100)]&apos;&gt;&lt;/img&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;table id=&quot;stats&quot;&gt;
+              &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Score&lt;/th&gt;
+              &lt;/tr&gt;
+              [h: class = &quot;oddRow&quot;]
+              [foreach(prop, propNames, &quot;&quot;), code: {
+                &lt;tr class=&quot;[r:class]&quot;&gt;
+                  &lt;td&gt;[r: prop]&lt;/td&gt;
+                  &lt;td&gt;[r: getProperty(prop)]&lt;/td&gt;
+                &lt;/tr&gt;
+                [h: class = if(class==&quot;oddRow&quot;, &quot;evenRow&quot;, &quot;oddRow&quot;)]
+              }]
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;</command>
+        <label>CharSheetMain</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>49</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>49</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>
+
+[h: currentPage = macro.args]
+[h: pages = &quot;Powers,Skills&quot;]
+&lt;table&gt;
+  &lt;tr&gt;
+    [foreach(page, pages,&quot;&quot;), code: {
+      [h,if (page == currentPage): class=&quot;currentPage&quot; ; class=&quot;page&quot;]
+      [h: callback = &quot;CharSheet@&quot;+getMacroLocation()]
+      &lt;td class=&quot;[r: class]&quot;&gt;
+        [r: macroLink(page, callback, &quot;none&quot;, &quot;Page=&quot;+page)]
+      &lt;/td&gt;
+    }]
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;</command>
+        <label>CharSheetHeader</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>48</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>48</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[frame(&quot;CharSheet&quot;): {
+  [h: page = getStrProp(macro.args, &quot;Page&quot;)]
+  [h,if(page==&quot;&quot;): page=&quot;Powers&quot;]
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Character Sheet&lt;/title&gt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;CssCharSheet@[r: getMacroLocation()]&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      [macro(&quot;CharSheetHeader@this&quot;): page]
+      [macro(&quot;CharSheet&quot;+page+&quot;@this&quot;): &quot;&quot;]
+      [macro(&quot;CharSheetFooter@this&quot;): page]
+    &lt;/body&gt;
+  &lt;/html&gt;
+}]</command>
+        <label>CharSheet</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>55</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>55</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: HalfLevel = halfLevel()]
+&lt;table&gt;
+[foreach(SkillName, skillList(), &quot;&quot;), CODE: {
+    [h: SkillValue = getProperty(SkillName)]
+    [h: SkillMod = getPropertyWithDefault(&quot;Mod &quot; + SkillName, 0)]
+    &lt;tr&gt;
+        &lt;th&gt;{SkillValue + SkillMod + HalfLevel}&lt;/th&gt;
+        &lt;th&gt;{SkillName}&lt;/th&gt;
+        &lt;td&gt;[r: macroLink(&quot;Use&quot;, &quot;useSkill@Lib:Util&quot;, &quot;all&quot;, SkillName)]&lt;/td&gt;
+    &lt;/tr&gt;
+}]
+&lt;/table&gt;</command>
+        <label>CharSheetSkills</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>54</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>54</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: MacroIds = getMacroGroup(getName(), &quot;json&quot;, &quot;Lib:Skills&quot;)]
+[h: Macros = &quot;&quot;]
+[h, foreach(MacroId, MacroIds), CODE: {
+    [h: Macros = json.append(Macros, getMacroProps(MacroId, &quot;json&quot;, &quot;Lib:Skills&quot;))]
+}]
+[h: Macros = json.sort(Macros, &quot;a&quot;, &quot;sortBy&quot;, &quot;label&quot;)]
+&lt;table id=&quot;powers&quot;&gt;
+[foreach(Power, Macros, &quot;&quot;), CODE: {
+    [h: Label = json.get(Power, &quot;label&quot;)]
+    [h: SortBy = json.get(Power, &quot;sortBy&quot;)]
+    &lt;tr class=&quot;{SortBy}&quot;&gt;
+    &lt;th&gt;{Label}&lt;/th&gt;
+    &lt;td&gt;[r: macroLink(&quot;Use&quot;, Label + &quot;@Lib:Skills&quot;, &quot;all&quot;)]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;/tr&gt;
+}]
+&lt;/table&gt;</command>
+        <label>CharSheetPowers</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>53</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>53</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- ======================================================================
+     ====
+     ==== Outputs a &quot;progress&quot; bar
+     ====
+     ==== Parameters (accepts a string property list with following keys)
+     ====
+     ====   MaxLen - Maximum length of status bar.
+     ====   MaxValue - The &quot;Full&quot; value for the bar.
+     ====   Value - The current value for the bar.
+     ====   Label - The label for the bar.
+     ====   Color - R,G,B color
+     ====
+     ====================================================================== --&gt;
+[h: r0=200] [h: g0=200] [h: b0=200]
+[h: MaxLen=getStrProp(macro.args, &quot;MaxLen&quot;)]
+[h: MaxValue=getStrProp(macro.args, &quot;MaxValue&quot;)]
+[h: Value=getStrProp(macro.args, &quot;Value&quot;)]
+[h: Color=getStrProp(macro.args, &quot;Color&quot;)]
+[h: Label=getStrProp(macro.args, &quot;Label&quot;)]
+[h: r1=listGet(Color,0)]
+[h: g1=listGet(Color,1)]
+[h: b1=listGet(Color,2)]
+[h: Len=max(min(round(Value*MaxLen/MaxValue+0.4999),MaxLen),0)]
+[h: c=min(round(Value/MaxValue+0.4999),1)]
+[h: col=min(max(Len,0),1)*c]
+[h: r=eval(&quot;r&quot;+col)] [h: g=eval(&quot;g&quot;+col)] [h: b=eval(&quot;b&quot;+col)]
+[h: r=eval(&quot;r&quot;+col)] [h: g=eval(&quot;g&quot;+col)] [h: b=eval(&quot;b&quot;+col)]
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;span title=&quot;{Value}/{MaxValue}&quot;&gt;{Label}&lt;/span&gt;&lt;/td&gt;
+    &lt;td style=&quot;background-color: rgb({r},{g},{b})&quot;&gt;
+      &lt;span title=&quot;{Value}/{MaxValue}&quot;&gt;[c(Len, &quot;&quot;),r: &quot;&amp;nbsp;&quot;]&lt;/span&gt;
+    &lt;/td&gt;
+    [if(MaxLen-Len&gt;0), code: {
+      &lt;td style=&quot;background-color: rgb({r0},{g0},{b0})&quot;&gt;
+        &lt;span title=&quot;{Value}/{MaxValue}&quot;&gt;[c(MaxLen-Len,&quot;&quot;),r: &quot;&amp;nbsp;&quot;]&lt;/span&gt;
+      &lt;/td&gt;
+    }]
+  &lt;/tr&gt;
+&lt;/table&gt;
+</command>
+        <label>StatusBar</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>52</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>52</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- ======================================================================
+     ====
+     ==== Outputs a red/yellow/green bar
+     ====
+     ==== Parameters (accepts a string property list with following keys)
+     ====
+     ====   MaxLen - Maximum length of status bar.
+     ====   MaxValue - The &quot;Full&quot; value for the bar.
+     ====   Value - The current value for the bar.
+     ====   Label - The label for the bar.
+     ====
+     ====================================================================== --&gt;
+&lt;!-- Set up the colors for our &quot;Traffic Lights&quot; --&gt;
+[h: r0=200] [h: g0=200] [h: b0=200]
+[h: r1=200] [h: g1=0]   [h: b1=0]
+[h: r2=255] [h: g2=140] [h: b2=0]
+[h: r3=0]   [h: g3=200] [h: b3=0]
+[h: MaxLen=getStrProp(macro.args, &quot;MaxLen&quot;)]
+[h: MaxValue=getStrProp(macro.args, &quot;MaxValue&quot;)]
+[h: Value=getStrProp(macro.args, &quot;Value&quot;)]
+[h: Label=getStrProp(macro.args, &quot;Label&quot;)]
+[h: Len=max(min(round(Value*MaxLen/MaxValue+0.4999),MaxLen),0)]
+[h: Len=if(Value&gt;=MaxValue,MaxLen, Len)]
+[h: c=min(round(Value*3/MaxValue+0.4999),3)]
+[h: col=min(max(Len,0),1)*c]
+[h: r=eval(&quot;r&quot;+col)] [h: g=eval(&quot;g&quot;+col)] [h: b=eval(&quot;b&quot;+col)]
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;span title=&quot;{Value}/{MaxValue}&quot;&gt;{Label}&lt;/span&gt;&lt;/td&gt;
+    &lt;td style=&quot;background-color: rgb({r},{g},{b})&quot;&gt;
+      &lt;span title=&quot;{Value}/{MaxValue}&quot;&gt;[c(Len, &quot;&quot;),r: &quot;&amp;nbsp;&quot;]&lt;/span&gt;
+    &lt;/td&gt;
+    [if(MaxLen-Len&gt;0), code: {
+      &lt;td style=&quot;background-color: rgb({r0},{g0},{b0})&quot;&gt;
+        &lt;span title=&quot;{Value}/{MaxValue}&quot;&gt;[c(MaxLen-Len,&quot;&quot;),r: &quot;&amp;nbsp;&quot;]&lt;/span&gt;
+      &lt;/td&gt;
+    }]
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+</command>
+        <label>TrafficLightBar</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>57</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>57</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;br&gt;&lt;hr&gt;
+[r: macroLink(&quot;End Turn&quot;, &quot;End Turn@Lib:Skills&quot;, &quot;all&quot;)] /
+[r: macroLink(&quot;Roll Initiative&quot;, &quot;Roll Initiative@Lib:Skills&quot;, &quot;all&quot;)]&lt;br&gt;
+[r: macroLink(&quot;Take Damage&quot;, &quot;Apply Damage@Lib:Skills&quot;, &quot;all&quot;)] /
+[r: macroLink(&quot;Heal&quot;, &quot;Apply Healing@Lib:Skills&quot;, &quot;all&quot;)] /
+[r: macroLink(&quot;Healing Surge&quot;, &quot;Healing Surge@Lib:Skills&quot;, &quot;all&quot;)]&lt;br&gt;
+[r: macroLink(&quot;Saving Throw&quot;, &quot;Saving Throw@Lib:Skills&quot;, &quot;all&quot;)]&lt;br&gt;
+</command>
+        <label>CharSheetFooter</label>
+        <group>UI</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>56</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>56</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: SkillName = arg(0)]
+[h: SkillValue = getProperty(SkillName)]
+[h: SkillMod = getPropertyWithDefault(&quot;Mod &quot; + SkillName, 0)]
+[h: HalfLevel = halfLevel()]
+Using [gt, st, t(SkillName): 1d20 + SkillValue + SkillMod + HalfLevel] skill</command>
+        <label>useSkill</label>
+        <group>Player</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
         <compareSortPrefix>true</compareSortPrefix>

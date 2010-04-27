@@ -1,0 +1,2031 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>wKgBAaockD3LLQAAAIAAAA==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>7b695a053b8f55de4ddd02307b934af4</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>650</x>
+  <y>600</y>
+  <z>11</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
+  <snapToScale>true</snapToScale>
+  <width>64</width>
+  <height>64</height>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAdBlFSoGAAAAKgABAA==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <name>Lib:Skills</name>
+  <ownerType>0</ownerType>
+  <tokenShape>CIRCLE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>Library</propertyType>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Normal</sightType>
+  <hasSight>false</hasSight>
+  <state>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <propertyMap class="net.rptools.CaseInsensitiveHashMap">
+    <store/>
+  </propertyMap>
+  <macroPropertiesMap>
+    <entry>
+      <int>10</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>10</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: abort(input(
+    &quot;Target|&quot; + targetList(&quot;pc&quot;) +&quot;|Target|RADIO|VALUE=STRING&quot;
+))]
+{Target} gains [gt, st, t(&quot;temporary hit points&quot;): grantTempHp(4, Target)] due to virtue of valor.</command>
+        <label>Virtue of Valor</label>
+        <group>Timo</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>13</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>13</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>Using Fade Away
+&lt;br&gt;{getName()} becomes invisible</command>
+        <label>Fade Away</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>14</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>14</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: abort(input(
+    &quot;Target|&quot; + targetList(&quot;pc&quot;) +&quot;|Target|RADIO|VALUE=STRING&quot;
+))]
+Using Majestic Word
+&lt;br&gt;{Target} may spend a healing surge and regain an additional 4 hit points and 4 temporary hit points.
+&lt;br&gt;{getName()} may slide {Target} one square.</command>
+        <label>Majestic Word</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>15</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>15</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Shout of Triumph&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 2,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Close Blast&quot;,
+    &quot;Distance&quot;, 3,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;, 
+    &quot;DamageType&quot;, &quot;Thunder&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;%{Player} may push %{Target} 3 squares&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;may slide each ally in the blast 3 squares&quot;))]
+
+{usePower(Power)}</command>
+        <label>Shout of Triumph</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>17</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>17</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Warsong Strike&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 2,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;Any ally who hits %{Target} before the end of %{Player}&apos;s next turn gains &quot; + getAbilityMod(&quot;Constitution&quot;) + &quot; temp HPs&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Warsong Strike</label>
+        <group>Timo</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>16</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>16</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: MarkedBy = askForTarget(&quot;pc&quot;)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Misdirected Mark&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, MarkedBy + &quot; marks %{Target} until the end of %{Player}&apos;s next turn&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Misdirected Mark</label>
+        <group>Timo</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>18</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>18</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Impelling Force&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;,
+    &quot;DamageType&quot;, &quot;Force&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;may slide the target 5 squares to a space adjacent to an ally.&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}
+</command>
+        <label>Impelling Force</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>21</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>21</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>Using Mage Hand</command>
+        <label>Mage Hand</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>20</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>20</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>Using Ghost Sound</command>
+        <label>Ghost Sound</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>23</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>23</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Stirring Shout&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Will&quot;, 
+    &quot;DamageType&quot;, &quot;Psychic&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 2,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{Extra:&apos;Until the end of the encounter, whenever an ally hits the target, that ally regains 4 hit points&apos;}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Stirring Shout</label>
+        <group>Timo</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>22</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>22</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>Using Prestidigitation</command>
+        <label>Prestidigitation</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>25</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>25</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Ray of Frost&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;, 
+    &quot;DamageType&quot;, &quot;Cold&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;%{Target} is slowed until the end of %{Player}&apos;s next turn&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Ray of Frost</label>
+        <group>Arcanus</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>26</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>26</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: abort(input(
+    &quot;Apply Damage To|&quot; + token.name + &quot;||LABEL|&quot;,
+    &quot;Damage&quot;
+))]
+
+&lt;!-- Remove Normal HPs --&gt;
+Taking [gt, st, t(&quot;damage&quot;): damage(Damage)]</command>
+        <label>Apply Damage</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>29</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>29</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: abort(input(
+    &quot;Apply Healing To|&quot; + token.name + &quot;||LABEL|&quot;,
+    &quot;Health&quot;
+))]
+
+[gt, st, t(&quot;Healing&quot;): heal(Health)]</command>
+        <label>Apply Healing</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>31</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>31</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: ExtraHP = getPropertyWithDefault(&quot;Mod Surge Value&quot;, 0)]
+[h: SurgeValue = getProperty(&quot;Surge Value&quot;)]
+[h: Surges = getProperty(&quot;Healing Surges Remaining&quot;)]
+[h: assert(Surges &gt; 0 || state.Dying, &quot;No Surges Remaining&quot;)]
+
+[h: abort(input(
+    &quot;Healing Surge for |&quot; + token.name + &quot;||LABEL|&quot;,
+    &quot;Surge Value (HP)|&quot; + SurgeValue + &quot;||LABEL|&quot;,
+    &quot;ExtraHP | &quot; + ExtraHP + &quot;|Additional HP|TEXT|&quot;,
+    &quot;Available Surges |&quot; + Surges + &quot;||LABEL|&quot;
+))]
+
+[h: HealCalculation = if(!Surges &amp;&amp; state.Dying, &quot;1 + 0&quot;, SurgeValue + &quot; + &quot; + ExtraHP)]
+[h: HealValue = eval(HealCalculation)]
+[h: HealCalculation = HealCalculation + &quot; = &quot; + HealValue]
+
+[h: heal(HealValue)]
+Using a [gt, st, t(&quot;healing surge&quot;): HealCalculation]
+
+[h: setProperty(&quot;Healing Surges Remaining&quot;, max(Surges - 1, 0))]
+[h: setPropertyWithDefault(&quot;Mod Surge Value&quot;, 0, 0)]</command>
+        <label>Healing Surge</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>30</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>30</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Weapons = getWeapons()]
+[h: WeaponNames = json.toList(json.getAll(Weapons, &quot;Name&quot;))]
+[h: abort(input(
+    &quot;WeaponIndex|&quot; + WeaponNames + &quot;|Weapon|LIST|&quot;,
+    &quot;Target|&quot; + targetList() +&quot;|Target|RADIO|VALUE=STRING&quot;
+))]
+[h: Weapon = json.get(Weapons, WeaponIndex)]
+[h: Bonus = json.get(Weapon, &quot;Bonus&quot;)]
+[h: AttackMod = getPropertyWithDefault(&quot;Mod Attack&quot;, 0)]
+[h: Ability = if(json.get(Weapon, &quot;Type&quot;) == &quot;Ranged&quot;, &quot;Dexterity&quot;, &quot;Strength&quot;)]
+[h: AbilityMod = getAbilityMod(Ability)]
+[h: HalfLevel = halfLevel()]
+
+[h: Roll = 1d20]
+[h: Attack = Roll + AbilityMod + Bonus + AttackMod + HalfLevel]
+[h: AttackRoll = &quot;1d20 (&quot; + Roll + &quot;) + Modifier (&quot; + (Attack - Roll) + &quot;) = &quot; + Attack + &quot; vs. AC&quot;]
+[h: IsHit = hitCheck(Attack, Target, &quot;AC&quot;)]
+[h: IsCritical = if(Roll == 20 &amp;&amp; IsHit, 1, 0)]
+[h: Description = if (IsCritical, &quot;scores a critical hit on&quot;, if (IsHit, &quot;hits&quot;, &quot;misses&quot;))]
+[h: Pronoun = listGet(pronouns(), 1)]
+
+[gt, st, t(Description): AttackRoll] {Target} with {Pronoun} {json.get(Weapon, &quot;Name&quot;)} </command>
+        <label>Basic Melee Attack Old</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>34</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>34</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Initiative = getProperty(&quot;Initiative&quot;)]
+[h: addToInitiative()]
+Rolling [gt, st, t(&quot;initiative&quot;): setInitiative(1d20+ Initiative)].
+[h: sortInitiative()]</command>
+        <label>Roll Initiative</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>35</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>35</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Scorching Burst&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 2,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;all&quot;,
+    &quot;Range&quot;, &quot;Area Burst 1&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;DamageType&quot;, &quot;Fire&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Scorching Burst</label>
+        <group>Arcanus</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>32</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>32</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Modifier = getPropertyWithDefault(&quot;Mod Saving Throws&quot;, 0)]
+[h: abort(input(&quot;Modifier|&quot; + Modifier))]
+[gt, st, t(if(roll.result &lt; 10, &quot;Failed to save&quot;, &quot;Successfully saved&quot;)): 1d20 + Modifier]
+</command>
+        <label>Saving Throw</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>33</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>33</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[r, if(getInitiativeToken() == currentToken()), CODE: {
+    Ending turn
+    [h: nextInitiative()]
+};{
+    [h: assert(0, &quot;Cannot end turn, because it is not your turn&quot;)]
+}]</command>
+        <label>End Turn</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>38</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>38</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Freezing Cloud&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 2,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;all&quot;,
+    &quot;Range&quot;, &quot;Area Burst 2&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;, 
+    &quot;DamageType&quot;, &quot;Cold&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;&quot;,
+        &quot;Multiplier&quot;, 0.5),
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;The cloud lasts until the end of %{Player}&apos;s next turn.  Any creature that enters the cloud or starts its turn there is subject to another attack.  %{Player} may dismiss the cloud as a minor action.&quot;))]
+
+{usePower(Power)}</command>
+        <label>Freezing Cloud</label>
+        <group>Arcanus</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>39</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>39</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Freezing Cloud, Extra Attack&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Immediate&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;all&quot;,
+    &quot;Range&quot;, &quot;Area Burst 2&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;, 
+    &quot;DamageType&quot;, &quot;Cold&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;&quot;,
+        &quot;Multiplier&quot;, 0.5),
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Freezing Cloud, Extra Attack</label>
+        <group>Arcanus</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>36</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>36</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Icy Terrain&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 2,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;all&quot;,
+    &quot;Range&quot;, &quot;Area Burst 1&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;DamageType&quot;, &quot;Cold&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;%{Target} is knocked prone&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;The power&apos;s area is difficult terrain until the end of %{Player}&apos;s next turn.  %{Player} may end this effect as a minor action.&quot;))]
+
+{usePower(Power)}</command>
+        <label>Icy Terrain</label>
+        <group>Arcanus</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>37</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>37</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: IntMod = getAbilityMod(&quot;Intelligence&quot;)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Flaming Sphere&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;all&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;DamageType&quot;, &quot;Fire&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 2,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Player} conjures a medium flaming sphere adjacent to the target.  Any creature starting its turn adjacent to the sphere takes 1d4 + &quot; + IntMod + &quot; fire damage.  As a move action, %{Player} may move the sphere 6 squares.&quot;,
+        &quot;SustainMinor&quot;, &quot;You can sustain this power until the end of the encounter. As a standard action, you can make another attack with the sphere.&quot;))]
+
+{usePower(Power)}</command>
+        <label>Flaming Sphere</label>
+        <group>Arcanus</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>42</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>42</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Penalty = -1 * (getAbilityMod(&quot;Intelligence&quot;) + 2)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Witchfire&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;DamageType&quot;, &quot;Fire&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 2,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;%{Target} takes a &quot; + Penalty + &quot; penalty to attack rolls until the end of %{Player}&apos;s next turn&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Witchfire</label>
+        <group>Valonir</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>43</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>43</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Eyebite&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Will&quot;, 
+    &quot;DamageType&quot;, &quot;Psychic&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 6, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;%{Player} is invisible to %{Target} until the start of %{Player}&apos;s next turn.&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Eyebite</label>
+        <group>Valonir</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>40</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>40</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: IntMod = getAbilityMod(&quot;Intelligence&quot;)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Flaming Sphere, Extra Damage&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Immediate&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;all&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;DamageType&quot;, &quot;Fire&quot;,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 4, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;))]
+
+{usePower(Power)}</command>
+        <label>Flaming Sphere, Extra Damage</label>
+        <group>Arcanus</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>41</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>41</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Fire Shroud&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 2,
+    &quot;Bonus&quot;, 0,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Close Burst&quot;,
+    &quot;Distance&quot;, 3,
+    &quot;Ability&quot;, &quot;Intelligence&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;, 
+    &quot;DamageType&quot;, &quot;Fire&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Intelligence&quot;, 
+        &quot;Extra&quot;, &quot;%{Target} takes 5 ongoing fire damage (save ends).&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Fire Shroud</label>
+        <group>Arcanus</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>46</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>46</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Curse of the Dark Dream&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Will&quot;, 
+    &quot;DamageType&quot;, &quot;Psychic&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 3,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;%{Player} slides %{Target} 3 squares.&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;Sustain Minor: %{Player} slides the target 1 square (save ends).&quot;))]
+
+{usePower(Power)}</command>
+        <label>Curse of the Dark Dream</label>
+        <group>Valonir</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>47</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>47</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Eldritch Blast&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;DamageType&quot;, &quot;&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Eldritch Blast</label>
+        <group>Valonir</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>44</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>44</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>Using Warlock&apos;s Curse
+[h: abort(input(
+    &quot;Target|&quot; + targetList(&quot;npc&quot;) +&quot;|Target|RADIO|VALUE=STRING&quot;
+))]
+[h: state(Target, &quot;Curse Blue&quot;, 1)]
+&lt;br&gt;{getName()} curses {Target}</command>
+        <label>Warlocks Curse</label>
+        <group>Valonir</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>45</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>45</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: IntMod = getAbilityMod(&quot;Intelligence&quot;)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Warlock&apos;s Curse Damage&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Immediate&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;DamageType&quot;, &quot;Curse&quot;,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 6))]
+
+{usePower(Power)}</command>
+        <label>Warlocks Curse Damage</label>
+        <group>Valonir</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>51</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>51</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Basic Melee Attack&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Basic Melee Attack - Warhammer</label>
+        <group>Diesa</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>50</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>50</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Cleave (Second Target)&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;&quot;, 
+    &quot;Opposed&quot;, &quot;&quot;, 
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Hit&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Cleave (Second Target)</label>
+        <group>Diesa</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>49</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>49</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Cleave&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;%{Player} may damage a second adjacent target.&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Cleave</label>
+        <group>Diesa</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>48</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>48</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Storm Walk&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 10,
+    &quot;Ability&quot;, &quot;Charisma&quot;, 
+    &quot;Opposed&quot;, &quot;Fortitude&quot;, 
+    &quot;DamageType&quot;, &quot;Thunder&quot;,
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Charisma&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;Before or after the attack, Valonir shifts 1 square.&quot;))]
+
+{usePower(Power)}</command>
+        <label>Storm Walk</label>
+        <group>Valonir</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>55</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>55</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Tempest Dance&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Player} may shift 1 square and repeat the attack against another target (Up to 3 total attacks).&quot;))]
+
+{usePower(Power)}</command>
+        <label>Tempest Dance</label>
+        <group>Diesa</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>54</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>54</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Shield Bash&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 2,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;Reflexes&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;%{Player} pushes %{Target} 1 square and knocks %{Target} prone.&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Shield Bash</label>
+        <group>Diesa</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>53</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>53</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Reaping Strike&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, json.set(&quot;&quot;,
+        &quot;Multiplier&quot;, 0.5,
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Reaping Strike</label>
+        <group>Diesa</group>
+        <sortby>a-at-will</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>52</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>52</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Precise Strike&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 7,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Precise Strike</label>
+        <group>Diesa</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>59</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>59</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Basic Melee Attack&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Basic Melee Attack - Longsword</label>
+        <group>Arcanus</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>58</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>58</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Basic Melee Attack&quot;,
+    &quot;Type&quot;, &quot;At Will&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 2,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 8, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
+        <label>Basic Melee Attack - Scimitar</label>
+        <group>Timo</group>
+        <sortby>d-other</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>57</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>57</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[macro(&quot;CharSheet@Lib:Util&quot;): &quot;&quot;]
+[abort(0)]</command>
+        <label>Character Sheet</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>56</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>56</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: DexMod = getAbilityMod(&quot;Dexterity&quot;)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Tempest Dance with Combat Advantage&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;Bonus&quot;, 3,
+    &quot;TargetType&quot;, &quot;npc&quot;,
+    &quot;Range&quot;, &quot;Melee&quot;,
+    &quot;Distance&quot;, 1,
+    &quot;Ability&quot;, &quot;Strength&quot;, 
+    &quot;Opposed&quot;, &quot;AC&quot;, 
+    &quot;Hit&quot;, json.set(&quot;&quot;,
+        &quot;Dice&quot;, 1,
+        &quot;Sides&quot;, 10, 
+        &quot;Ability&quot;, &quot;Strength&quot;, 
+        &quot;Bonus&quot;, DexMod, 
+        &quot;Extra&quot;, &quot;&quot;),
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Player} may shift 1 square and repeat the attack against another target (Up to 3 total attacks).&quot;))]
+
+{usePower(Power)}</command>
+        <label>Tempest Dance (Combat Advantage)</label>
+        <group>Diesa</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>
