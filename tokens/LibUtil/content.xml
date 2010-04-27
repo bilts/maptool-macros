@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAZ71jz3KLQAAAIgBAA==</baGUID>
+    <baGUID>wKgBAQaWekG3OQAAQCgAAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -2271,7 +2271,7 @@
 [h: json.unpack(arg(0), Defaults)]
 
 Using {Name}
-
+[h: TargetTokens = &quot;&quot;]
 [h, if(Targets &gt; 0): TargetTokens = askForTarget(TargetType, Targets - 1)]
 
 [r, if(Ability != &quot;&quot; &amp;&amp; Opposed != &quot;&quot; &amp;&amp; Targets &gt; 0), CODE: {
@@ -2301,7 +2301,7 @@ Using {Name}
         [r: describeAttackResult(arg(0), json.set(DummyAttack, &quot;Target&quot;, Target), &quot;Effect&quot;, EffectDamage)]
     }]
 };{
-    [r: describeAttackResult(arg(0), DummyAttack, &quot;Effect&quot;, EffectDamage)]
+    [r: describeAttackResult(arg(0), json.set(DummyAttack, &quot;Target&quot;, TargetTokens), &quot;Effect&quot;, EffectDamage)]
 }]
 </command>
         <label>usePower</label>

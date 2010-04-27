@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAaockD3LLQAAAIAAAA==</baGUID>
+    <baGUID>wKgBAfZ2ekG2OQAAQCgAAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -14,8 +14,8 @@
   <x>650</x>
   <y>600</y>
   <z>11</z>
-  <anchorX>0</anchorX>
-  <anchorY>0</anchorY>
+  <anchorX>2</anchorX>
+  <anchorY>1</anchorY>
   <sizeScale>1.0</sizeScale>
   <lastX>0</lastX>
   <lastY>0</lastY>
@@ -78,6 +78,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Curse Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dead</string>
       <boolean>false</boolean>
     </entry>
@@ -133,8 +137,20 @@
         <index>13</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>Using Fade Away
-&lt;br&gt;{getName()} becomes invisible</command>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Fade Away&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Immediate Reaction&quot;,
+    &quot;Targets&quot;, 0,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;&quot;,
+    &quot;Distance&quot;, 0,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Player} becomes invisible until %{Player} attacks or until the end of %{Player}&apos;s next turn.&quot;))]
+
+{usePower(Power)}</command>
         <label>Fade Away</label>
         <group>Timo</group>
         <sortby>b-encounter</sortby>
@@ -163,12 +179,21 @@
         <index>14</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: abort(input(
-    &quot;Target|&quot; + targetList(&quot;pc&quot;) +&quot;|Target|RADIO|VALUE=STRING&quot;
-))]
-Using Majestic Word
-&lt;br&gt;{Target} may spend a healing surge and regain an additional 4 hit points and 4 temporary hit points.
-&lt;br&gt;{getName()} may slide {Target} one square.</command>
+        <command>[h: CharismaMod = getAbilityMod(&quot;Charisma&quot;)]
+[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Majestic Word&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Minor&quot;,
+    &quot;Targets&quot;, 1,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;Close Burst&quot;,
+    &quot;Distance&quot;, 5,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Target} may spend a healing surge and regain an additional &quot; + CharismaMod + &quot; hit points.  %{Player} may slide %{Target} 1 square&quot;))]
+
+{usePower(Power)}</command>
         <label>Majestic Word</label>
         <group>Timo</group>
         <sortby>b-encounter</sortby>
@@ -216,7 +241,7 @@ Using Majestic Word
         &quot;Extra&quot;, &quot;%{Player} may push %{Target} 3 squares&quot;),
     &quot;Miss&quot;, &quot;{}&quot;,
     &quot;Effect&quot;, json.set(&quot;&quot;,
-        &quot;Extra&quot;, &quot;may slide each ally in the blast 3 squares&quot;))]
+        &quot;Extra&quot;, &quot;%{Player} may slide each ally in the blast 3 squares&quot;))]
 
 {usePower(Power)}</command>
         <label>Shout of Triumph</label>
@@ -393,7 +418,19 @@ Using Majestic Word
         <index>21</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>Using Mage Hand</command>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Mage Hand&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Minor&quot;,
+    &quot;Targets&quot;, 0,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 5,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
         <label>Mage Hand</label>
         <group>Timo</group>
         <sortby>b-encounter</sortby>
@@ -422,7 +459,19 @@ Using Majestic Word
         <index>20</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>Using Ghost Sound</command>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Ghost Sound&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 0,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;&quot;,
+    &quot;Distance&quot;, 0,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
         <label>Ghost Sound</label>
         <group>Timo</group>
         <sortby>b-encounter</sortby>
@@ -499,7 +548,19 @@ Using Majestic Word
         <index>22</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>Using Prestidigitation</command>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Prestidigitation&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Standard&quot;,
+    &quot;Targets&quot;, 0,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 2,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, &quot;{}&quot;)]
+
+{usePower(Power)}</command>
         <label>Prestidigitation</label>
         <group>Timo</group>
         <sortby>b-encounter</sortby>
@@ -2008,6 +2069,250 @@ Rolling [gt, st, t(&quot;initiative&quot;): setInitiative(1d20+ Initiative)].
         <label>Tempest Dance (Combat Advantage)</label>
         <group>Diesa</group>
         <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>63</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>63</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[macro(&quot;Second Wind - Real@Lib:Skills&quot;): &quot;&quot;]</command>
+        <label>Second Wind</label>
+        <group>Valonir</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>62</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>62</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[macro(&quot;Second Wind - Real@Lib:Skills&quot;): &quot;&quot;]</command>
+        <label>Second Wind</label>
+        <group>Diesa</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>61</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>61</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: ExtraHP = getPropertyWithDefault(&quot;Mod Surge Value&quot;, 0)]
+[h: SurgeValue = getProperty(&quot;Surge Value&quot;)]
+[h: Surges = getProperty(&quot;Healing Surges Remaining&quot;)]
+[h: assert(Surges &gt; 0 || state.Dying, &quot;No Surges Remaining&quot;)]
+
+[h: HealCalculation = if(!Surges &amp;&amp; state.Dying, &quot;1 + 0&quot;, SurgeValue + &quot; + &quot; + ExtraHP)]
+[h: HealValue = eval(HealCalculation)]
+[h: HealCalculation = HealCalculation + &quot; = &quot; + HealValue]
+
+[h: heal(HealValue)]
+Using Second Wind
+&lt;br&gt;[r: getName()] [gt, st, t(&quot;heals&quot;): HealCalculation].
+&lt;br&gt;[r: getName()] gains a +2 bonus to all defenses until the start of [r: listGet(pronouns(), 1)] next turn.
+
+[h: setProperty(&quot;Healing Surges Remaining&quot;, max(Surges - 1, 0))]
+[h: setPropertyWithDefault(&quot;Mod Surge Value&quot;, 0, 0)]</command>
+        <label>Second Wind - Real</label>
+        <group>All</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>60</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>60</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[macro(&quot;Second Wind - Real@Lib:Skills&quot;): &quot;&quot;]</command>
+        <label>Second Wind</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>64</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>64</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[macro(&quot;Second Wind - Real@Lib:Skills&quot;): &quot;&quot;]</command>
+        <label>Second Wind</label>
+        <group>Arcanus</group>
+        <sortby>b-encounter</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>65</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>65</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Song of Courage&quot;,
+    &quot;Type&quot;, &quot;Daily&quot;,
+    &quot;ActionType&quot;, &quot;Minor&quot;,
+    &quot;Targets&quot;, 0,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;Close Burst&quot;,
+    &quot;Distance&quot;, 5,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Player} creates a zone of inspiration that lasts until the end of %{Player}&apos;s next turn.  While within the zone, any ally gains a +1 bonus to attack rolls.  The zone moves with %{Player}.  Sustain Minor: The zone persists.&quot;))]
+
+{usePower(Power)}</command>
+        <label>Song of Courage</label>
+        <group>Timo</group>
+        <sortby>c-daily</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>66</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <saveLocation>Token</saveLocation>
+        <index>66</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: Power = json.set(&quot;&quot;,
+    &quot;Name&quot;, &quot;Words of Friendship&quot;,
+    &quot;Type&quot;, &quot;Encounter&quot;,
+    &quot;ActionType&quot;, &quot;Minor&quot;,
+    &quot;Targets&quot;, 0,
+    &quot;TargetType&quot;, &quot;pc&quot;,
+    &quot;Range&quot;, &quot;Ranged&quot;,
+    &quot;Distance&quot;, 2,
+    &quot;Hit&quot;, &quot;{}&quot;,
+    &quot;Miss&quot;, &quot;{}&quot;,
+    &quot;Effect&quot;, json.set(&quot;&quot;,
+        &quot;Extra&quot;, &quot;%{Player} gains a +5 power bonus to next diplomacy check %{Player} makes before the end of %{Player}&apos;s next turn.&quot;))]
+
+{usePower(Power)}</command>
+        <label>Words of Friendship</label>
+        <group>Timo</group>
+        <sortby>b-encounter</sortby>
         <autoExecute>true</autoExecute>
         <includeLabel>false</includeLabel>
         <applyToTokens>false</applyToTokens>
