@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKiJAeod/URyAAAAQKgJAA==</baGUID>
+    <baGUID>wKiJAfHnDUXvAAAAQAiBAQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -2588,7 +2588,7 @@ td {
         <index>48</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[frame(&quot;CharSheet - &quot; + getName()): {
+        <command>[frame(getName()): {
   [h: page = getStrProp(macro.args, &quot;Page&quot;)]
   [h,if(page==&quot;&quot;): page=&quot;Powers&quot;]
   &lt;html&gt;
