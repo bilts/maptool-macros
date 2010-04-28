@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAeKqGkJmOwAAQAgAAA==</baGUID>
+    <baGUID>wKiJAeod/URyAAAAQKgJAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -2554,7 +2554,7 @@ td {
       [h,if (page == currentPage): class=&quot;currentPage&quot; ; class=&quot;page&quot;]
       [h: callback = &quot;CharSheet@&quot;+getMacroLocation()]
       &lt;td class=&quot;[r: class]&quot;&gt;
-        [r: macroLink(page, callback, &quot;none&quot;, &quot;Page=&quot;+page)]
+        [r: macroLink(page, callback, &quot;none&quot;, &quot;Page=&quot;+page, getName())]
       &lt;/td&gt;
     }]
   &lt;/tr&gt;
@@ -2588,12 +2588,12 @@ td {
         <index>48</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[frame(&quot;CharSheet&quot;): {
+        <command>[frame(&quot;CharSheet - &quot; + getName()): {
   [h: page = getStrProp(macro.args, &quot;Page&quot;)]
   [h,if(page==&quot;&quot;): page=&quot;Powers&quot;]
   &lt;html&gt;
     &lt;head&gt;
-      &lt;title&gt;Character Sheet&lt;/title&gt;
+      &lt;title&gt;Character Sheet - [r: getName()]&lt;/title&gt;
       &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;CssCharSheet@[r: getMacroLocation()]&quot;&gt;
     &lt;/head&gt;
     &lt;body&gt;
@@ -2639,7 +2639,7 @@ td {
     &lt;tr&gt;
         &lt;th&gt;{SkillValue + SkillMod + HalfLevel}&lt;/th&gt;
         &lt;th&gt;{SkillName}&lt;/th&gt;
-        &lt;td&gt;[r: macroLink(&quot;Use&quot;, &quot;useSkill@Lib:Util&quot;, &quot;all&quot;, SkillName)]&lt;/td&gt;
+        &lt;td&gt;[r: macroLink(&quot;Use&quot;, &quot;useSkill@Lib:Util&quot;, &quot;all&quot;, SkillName, getName())]&lt;/td&gt;
     &lt;/tr&gt;
 }]
 &lt;/table&gt;</command>
@@ -2683,7 +2683,7 @@ td {
     [h: SortBy = json.get(Power, &quot;sortBy&quot;)]
     &lt;tr class=&quot;{SortBy}&quot;&gt;
     &lt;th&gt;{Label}&lt;/th&gt;
-    &lt;td&gt;[r: macroLink(&quot;Use&quot;, Label + &quot;@Lib:Skills&quot;, &quot;all&quot;)]&lt;/td&gt;
+    &lt;td&gt;[r: macroLink(&quot;Use&quot;, Label + &quot;@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())]&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;&lt;/tr&gt;
 }]
@@ -2853,12 +2853,12 @@ td {
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
         <command>&lt;br&gt;&lt;hr&gt;
-[r: macroLink(&quot;End Turn&quot;, &quot;End Turn@Lib:Skills&quot;, &quot;all&quot;)] /
-[r: macroLink(&quot;Roll Initiative&quot;, &quot;Roll Initiative@Lib:Skills&quot;, &quot;all&quot;)]&lt;br&gt;
-[r: macroLink(&quot;Take Damage&quot;, &quot;Apply Damage@Lib:Skills&quot;, &quot;all&quot;)] /
-[r: macroLink(&quot;Heal&quot;, &quot;Apply Healing@Lib:Skills&quot;, &quot;all&quot;)] /
-[r: macroLink(&quot;Healing Surge&quot;, &quot;Healing Surge@Lib:Skills&quot;, &quot;all&quot;)]&lt;br&gt;
-[r: macroLink(&quot;Saving Throw&quot;, &quot;Saving Throw@Lib:Skills&quot;, &quot;all&quot;)]&lt;br&gt;
+[r: macroLink(&quot;End Turn&quot;, &quot;End Turn@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())] /
+[r: macroLink(&quot;Roll Initiative&quot;, &quot;Roll Initiative@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())]&lt;br&gt;
+[r: macroLink(&quot;Take Damage&quot;, &quot;Apply Damage@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())] /
+[r: macroLink(&quot;Heal&quot;, &quot;Apply Healing@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())] /
+[r: macroLink(&quot;Healing Surge&quot;, &quot;Healing Surge@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())]&lt;br&gt;
+[r: macroLink(&quot;Saving Throw&quot;, &quot;Saving Throw@Lib:Skills&quot;, &quot;all&quot;, &quot;&quot;, getName())]&lt;br&gt;
 </command>
         <label>CharSheetFooter</label>
         <group>UI</group>
