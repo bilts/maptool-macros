@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wKgBAQaWekG3OQAAQCgAAA==</baGUID>
+    <baGUID>wKgBAeKqGkJmOwAAQAgAAA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <imageAssetMap>
@@ -2263,7 +2263,9 @@
         <index>46</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: Defaults = json.set(&quot;&quot;,
+        <command>&lt;!-- [gm, r: macroLink(&quot;Suspend Macros&quot;, &quot;suspendMacros@Lib:Util&quot;, &quot;none&quot;, &quot;&quot;, &quot;DM&quot;) + &quot;,&quot;] --&gt;
+
+[h: Defaults = json.set(&quot;&quot;,
     &quot;Ability&quot;, &quot;&quot;,
     &quot;Opposed&quot;, &quot;&quot;,
     &quot;Bonus&quot;, 0)]
@@ -2303,7 +2305,8 @@ Using {Name}
 };{
     [r: describeAttackResult(arg(0), json.set(DummyAttack, &quot;Target&quot;, TargetTokens), &quot;Effect&quot;, EffectDamage)]
 }]
-</command>
+
+&lt;!-- [gm, r: macroLink(&quot;Suspend Macros&quot;, &quot;resumeMacros@Lib:Util&quot;, &quot;none&quot;, &quot;&quot;, &quot;DM&quot;)] --&gt;</command>
         <label>usePower</label>
         <group>Player</group>
         <sortby></sortby>
